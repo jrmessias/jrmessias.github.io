@@ -1,0 +1,43 @@
+{% assign data = site.data.data %}
+<!doctype html>
+<html>
+<head>
+    {% include head.html %}
+<body>
+<div x-data="boot()" :class="{ 'dark': isDark }" class="transition">
+    {{ content }}
+</div>
+<script>
+    const boot = () => {
+        const getTheme = () => {
+            if (window.localStorage.getItem('theme')) {
+                return JSON.parse(window.localStorage.getItem('theme'))
+            }
+
+            return !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        }
+
+        const setTheme = (value) => {
+            window.localStorage.setItem('theme', value)
+        }
+
+        return {
+            isDark: getTheme(),
+            toggleTheme() {
+                this.isDark = !this.isDark
+                setTheme(this.isDark)
+            },
+            setLightTheme() {
+                this.isDark = false
+                setTheme(this.isDark)
+            },
+            setDarkTheme() {
+                this.isDark = true
+                setTheme(this.isDark)
+            },
+        }
+    }
+</script>
+<script defer src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
+</body>
+</html>

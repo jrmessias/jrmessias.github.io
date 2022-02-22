@@ -1,41 +1,61 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>jrmessias - Júnior Messias, Israel</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content="Página pessoal de Israel Messias Júnior - jrmessias, Desenvolvedor Full-stack, Freelancer." />
-		<meta name="keywords" content="jrmessias, desenvolvimento web, full-stack, freelancer"/>
-		<meta name="robots" content="index, follow">
-		<!--[if lte IE 8]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-	</head>
-	<body>
-		<div id="wrapper">
-			<section id="main" class="fade-in">
-				<header>
-					<span class="avatar"><img src="images/profile.png" alt="jrmessias - Júnior Messias, Israel A" /></span>
-					<h1>Júnior Messias, Israel</h1>
-					<p>Freelancer</p>
-				</header>
-				<footer>
-					<ul class="icons">
-						<li><a href="https://www.linkedin.com/in/jrmessias" class="fa-linkedin" title="Linkedin">Linkedin</a></li>
-						<li><a href="https://www.github.com/jrmessias" class="fa-github" title="Github">Github</a></li>
-						<li><a href="https://curriculo.jrmessias.com.br" class="fa-file" title="CV">CV</a></li>
-						<li><a href="https://blog.jrmessias.com.br" class="fa-archive" title="Blog/Archive">Blog</a></li>
-					</ul>
-				</footer>
-			</section>
-			<footer id="footer">
-				<ul class="credits">
-					<li>&copy; jrmessias - Júnior Messias, Israel</li></li>
-				</ul>
-			</footer>
-		</div>
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-9490633-4"></script>
-		<!--[if lte IE 8]><script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
-	</body>
-</html>
+---
+layout: default
+---
+<main
+        class="h-screen text-slate-900 bg-slate-100 dark:bg-slate-900 flex flex-col items-center justify-center"
+>
+    <h1 class="sr-only">{{ site.title }}</h1>
+    <div class="flex flex-col items-center w-full max-w-xs p-4 bg-white dark:bg-slate-700 rounded-2xl md:flex-row shadow dark:shadow-slate-600">
+        <div class="-mt-28 md:-my-16 md:-ml-32">
+            <img class="w-auto h-40 rounded-full mr-2 dark:grayscale" src="https://www.gravatar.com/avatar/{{ site.gravatar }}?s=250&d=mm&r=x" alt="{{ site.title }}">
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="flex flex-col items-center md:items-start">
+                <h2 class="text-xl font-medium dark:text-slate-100">{{ site.title }}</h2>
+                <p class="text-base font-medium text-slate-400">{{ site.office }} @ <a href="{{ site.company_url }}" class="text-blue-500" about="_blank">{{ site.company }}</a></p>
+            </div>
+            <div class="flex items-center justify-center space-x-3 md:justify-start">
+                <!-- Icons source => https://boxicons.com/ -->
+                <a href="https://github.com/{{ site.github_username }}" target="_blank" class="transition-transform transform hover:scale-[1.1]">
+                    <span class="sr-only">Github</span>
+                    <svg aria-hidden="true" class="w-8 h-8  text-slate-700 dark:text-slate-500" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.026,2c-5.509,0-9.974,4.465-9.974,9.974c0,4.406,2.857,8.145,6.821,9.465 c0.499,0.09,0.679-0.217,0.679-0.481c0-0.237-0.008-0.865-0.011-1.696c-2.775,0.602-3.361-1.338-3.361-1.338 c-0.452-1.152-1.107-1.459-1.107-1.459c-0.905-0.619,0.069-0.605,0.069-0.605c1.002,0.07,1.527,1.028,1.527,1.028 c0.89,1.524,2.336,1.084,2.902,0.829c0.091-0.645,0.351-1.085,0.635-1.334c-2.214-0.251-4.542-1.107-4.542-4.93 c0-1.087,0.389-1.979,1.024-2.675c-0.101-0.253-0.446-1.268,0.099-2.64c0,0,0.837-0.269,2.742,1.021 c0.798-0.221,1.649-0.332,2.496-0.336c0.849,0.004,1.701,0.115,2.496,0.336c1.906-1.291,2.742-1.021,2.742-1.021 c0.545,1.372,0.203,2.387,0.099,2.64c0.64,0.696,1.024,1.587,1.024,2.675c0,3.833-2.33,4.675-4.552,4.922 c0.355,0.308,0.675,0.916,0.675,1.846c0,1.334-0.012,2.41-0.012,2.737c0,0.267,0.178,0.577,0.687,0.479 C19.146,20.115,22,16.379,22,11.974C22,6.465,17.535,2,12.026,2z"></path>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}/" target="_blank" class="transition-transform transform hover:scale-[1.1]">
+                    <span class="sr-only">Linkedin</span>
+                    <circle cx="4.983" cy="5.009" r="2.188"></circle>
+                    <path d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"></path>
+                    <svg aria-hidden="true" class="w-8 h-8  text-slate-700 dark:text-slate-500" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <circle cx="4.983" cy="5.009" r="2.188"></circle>
+                        <path d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"></path>
+                    </svg>
+                </a>
+                <a href="{{ site.cv_url }}" target="_blank" class="transition-transform transform hover:scale-[1.1]">
+                    <span class="sr-only">Curriculum</span>
+                    <circle cx="4.983" cy="5.009" r="2.188"></circle>
+                    <path d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"></path>
+                    <svg aria-hidden="true" class="w-8 h-8  text-slate-700 dark:text-slate-500" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M7.5 6.5C7.5 8.981 9.519 11 12 11s4.5-2.019 4.5-4.5S14.481 2 12 2 7.5 4.019 7.5 6.5zM20 21h1v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h17z"></path>
+                    </svg>
+                </a>
+                <a href="{{ site.blog_url }}" target="_blank" class="transition-transform transform hover:scale-[1.1]">
+                    <span class="sr-only">Blog</span>
+                    <svg aria-hidden="true" class="w-8 h-8  text-slate-700 dark:text-slate-500" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="m21.704 5.29-2.997-2.997A.996.996 0 0 0 18 2H6a.996.996 0 0 0-.707.293L2.296 5.29A.994.994 0 0 0 2 5.999V19a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V5.999a.994.994 0 0 0-.296-.709zM6.414 4h11.172l1 1H5.414l1-1zM17 13v1H7v-4h2v2h6v-2h2v3z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="fixed bottom-5 left-5">
+        <button id="theme-toggle" @click="toggleTheme" type="button" class="border-0 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 focus:outline-none rounded-full text-sm p-2 w-14 h-14 dark:bg-slate-800 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-full" viewBox="0 0 20 20" fill="currentColor" x-show="!isDark">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-full" viewBox="0 0 20 20" fill="currentColor" x-show="isDark">
+                <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
+            </svg>
+        </button>
+    </div>
+</main>
