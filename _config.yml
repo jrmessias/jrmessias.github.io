@@ -34,7 +34,7 @@ office: Developer
 company: iopoint
 company_url: http://www.iopoint.com.br
 
-googletagmanager: "GTM-TSKDSXL"
+googleanalytics: "G-SMX0451JVM"
 
 # Build settings
 theme: minima

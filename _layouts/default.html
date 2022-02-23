@@ -4,13 +4,6 @@
 <head>
     {% include head.html %}
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{site.googletagmanager}}"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<div x-data="boot()" :class="{ 'dark': isDark }" class="transition">
-    {{ content }}
-</div>
 <script>
     const boot = () => {
         const getTheme = () => {
