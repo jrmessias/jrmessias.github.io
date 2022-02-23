@@ -1,9 +1,11 @@
-{% assign data = site.data.data %}
 <!doctype html>
 <html>
 <head>
     {% include head.html %}
 <body>
+<div x-data="boot()" :class="{ 'dark': isDark }" class="transition">
+    {{ content }}
+</div>
 <script>
     const boot = () => {
         const getTheme = () => {
