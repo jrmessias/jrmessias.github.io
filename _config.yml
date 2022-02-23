@@ -28,10 +28,13 @@ github_username:  jrmessias
 linkedin_username: jrmessias
 blog_url: https://blog.jrmessias.com.br/
 cv_url: https://curriculo.jrmessias.com.br/
+
 gravatar: 9287850feb896e1fc865a2f8ea905255
 office: Developer
 company: iopoint
 company_url: http://www.iopoint.com.br
+
+googletagmanager: "GTM-TSKDSXL"
 
 # Build settings
 theme: minima
