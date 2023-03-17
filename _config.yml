@@ -1,6 +1,6 @@
-title: Júnior Messias, Israel
+title: Júnior Messias - Desenvolvedor - @jrmessias
 description: >- # this means to ignore newlines until "baseurl:"
-  Personal site
+  Site pessoal com links de acesso a meu portfólio e contato
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.jrmessias.com.br" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jrmessias
@@ -8,6 +8,7 @@ github_username:  jrmessias
 linkedin_username: jrmessias
 blog_url: https://blog.jrmessias.com.br/
 cv_url: https://curriculo.jrmessias.com.br/
+portfolio_url: https://portfolio.jrmessias.com.br/
 
 gravatar: 9287850feb896e1fc865a2f8ea905255
 office: Developer
