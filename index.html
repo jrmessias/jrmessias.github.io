@@ -1,70 +1,196 @@
----
-layout: default
----
-<main
-        class="h-screen text-slate-900 bg-gradient-to-t from-slate-300 to-slate-100 dark:from-slate-900 dark:to-slate-800 dark:bg-slate-900 flex flex-col items-center justify-center"
->
-    <h1 class="sr-only">{{ site.title }}</h1>
-    <div class="flex flex-col items-center w-full max-w-xs p-4 bg-white dark:bg-slate-700 rounded-2xl md:flex-row shadow dark:shadow-slate-600">
-        <div class="-mt-28 md:-my-16 md:-ml-32 mb-2 md:mr-2">
-            <img class="w-auto h-40 rounded-full dark:grayscale aspect-square" src="https://www.gravatar.com/avatar/{{ site.gravatar }}?s=250&d=mm&r=x" alt="{{ site.title }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@jrmessias - Júnior Messias - Desenvolvedor</title>
+    <meta name="description" content="Portfólio e contato de Júnior Messias - Desenvolvedor"/>
+    <meta name="keywords" content="HTML, CSS, JavaScript, JS, PHP, Web, Mobile, Flutter, Laravel">
+    <meta name="author" content="Júnior Messias">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SMX0451JVM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-SMX0451JVM');
+
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+</head>
+<body class="min-h-screen text-slate-900 dark:text-slate-300 bg-gradient-to-t from-slate-300 to-slate-100 dark:from-slate-900 dark:to-slate-700 dark:bg-slate-900 flex flex-col items-center justify-center transition">
+<div class="max-w-[350px] w-full">
+    <div class="w-full items-center justify-center">
+        <img class="w-auto  mx-auto h-40 rounded-full dark:grayscale aspect-square"
+             src="https://www.gravatar.com/avatar/9287850feb896e1fc865a2f8ea905255?s=250&amp;d=mm&amp;r=x"
+             alt="Júnior Messias, Israel">
+        <div class="flex flex-col items-center text-center py-4 text-base font-medium text-slate-500 dark:text-slate-400">
+            <h2 class="text-xl text-slate-700 dark:text-slate-100">Júnior Messias - <small>@jrmessias</small></h2>
+            <p>Developer <a href="http://www.iopoint.com.br" target="_blank">@iopoint</a> and freelancer</p>
         </div>
-        <div class="flex flex-col space-y-4">
-            <div class="flex flex-col items-center md:items-start">
-                <h2 class="text-xl font-medium dark:text-slate-100">Júnior Messias</h2>
-                <p class="text-base font-medium text-slate-400">{{ site.office }} <a href="{{ site.company_url }}" class="text-blue-500" target="_blank">@{{ site.company }}</a></p>
-            </div>
-            <div class="flex items-center justify-center space-x-3 md:justify-start">
-                <!-- Icons source => https://boxicons.com/ -->
-                <a href="https://github.com/{{ site.github_username }}" target="_blank" class="transition-transform transform hover:scale-[1.1]">
-                    <span class="sr-only">Github</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8  text-slate-700 dark:text-slate-500" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <div class="grid grid-cols-5 pb-4 gap-2 justify-items-center px-10 w-full  mx-auto">
+            <a href="https://github.com/jrmessias" target="_blank" title="Github @jrmessias">
+                <span class="sr-only">Github</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon-link" width="30" height="30" viewBox="0 0 24 24"
+                     stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+                </svg>
+            </a>
+            <a href="https://curriculo.jrmessias.com.br" target="_blank" title="Currículo">
+                <span class="sr-only">Currículo</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon-link" width="30" height="30" viewBox="0 0 24 24"
+                     stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+                    <path d="M6 21v-2a4 4 0 0 1 4 -4h3.5"></path>
+                    <path d="M20 21l2 -2l-2 -2"></path>
+                    <path d="M17 17l-2 2l2 2"></path>
+                </svg>
+            </a>
+            <a href="https://www.instagram.com/jrmessias.dev/" target="_blank" title="Instagram @jrmessias.dev">
+                <span class="sr-only">Instagram</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon-link" width="30" height="30" viewBox="0 0 24 24"
+                     stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+                    <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                    <path d="M16.5 7.5l0 .01"></path>
+                </svg>
+            </a>
+            <a href="https://wa.me/5549988198409?text=Contato%20via%20site" target="_blank" title="Whatsapp">
+                <span class="sr-only">Whatsapp</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon-link" width="30" height="30" viewBox="0 0 24 24"
+                     stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path>
+                    <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"></path>
+                </svg>
+            </a>
+            <div x-data="{ 'showModal': false }">
+                <a href="#" @click="showModal = !showModal" class="" title="Contato">
+                    <span class="sr-only">Formulário de Contato</span>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         class="icon-link transition-transform transform hover:scale-[1.1]" width="30" height="30"
+                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                         stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+                        <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
+                        <path d="M3 7l9 6l9 -6"></path>
                     </svg>
                 </a>
-                <a href="{{ site.cv_url }}" target="_blank" class="transition-transform transform hover:scale-[1.1]">
-                    <span class="sr-only">Curriculum</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-slate-700 dark:text-slate-500" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
-                        <path d="M6 21v-2a4 4 0 0 1 4 -4h3.5"></path>
-                        <path d="M20 21l2 -2l-2 -2"></path>
-                        <path d="M17 17l-2 2l2 2"></path>
-                    </svg>
-                </a>
-                <a href="{{ site.portfolio_url }}" target="_blank" class="transition-transform transform hover:scale-[1.1]">
-                    <span class="sr-only">Portfólio</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-slate-700 dark:text-slate-500" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M3 19l18 0"></path>
-                        <path d="M5 6m0 1a1 1 0 0 1 1 -1h12a1 1 0 0 1 1 1v8a1 1 0 0 1 -1 1h-12a1 1 0 0 1 -1 -1z"></path>
-                    </svg>
-                </a>
-                <div x-data="{ 'showModal': false }">
-                    <a href="#" @click="showModal = !showModal" class="">
-                        <span class="sr-only">Contato</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-slate-700 dark:text-slate-500 transition-transform transform hover:scale-[1.1]"  width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
-                            <path d="M3 7l9 6l9 -6"></path>
-                        </svg>
-                    </a>
-                    <!-- Modal -->
-                    {% include contact-modal.html %}
-                    <!-- Modal -->
+                <div class="fixed inset-0 z-30 flex items-center justify-center overflow-auto bg-black bg-opacity-50 hidden"
+                     :class="{ 'show' : showModal , 'hidden' : !showModal}"
+                     x-show="showModal"
+                     x-transition:enter="motion-safe:ease-out duration-300"
+                     x-transition:enter-start="opacity-0 scale-90"
+                     x-transition:enter-end="opacity-100 scale-100">
+                    <!-- Modal inner -->
+                    <div class="mt-7 bg-white  rounded-xl shadow-lg dark:bg-gray-800 dark:border-gray-700"  @click.away="showModal = false">
+                        <div class="p-4 sm:p-7">
+                            <div class="flex items-center justify-between">
+                                <h2 class="block text-2xl font-bold text-gray-800 dark:text-white">😀 Bem vindo, vamos conversar!</h2>
+                                <div class="w-10"></div>
+                                <button type="button" class="z-50 cursor-pointer" @click="showModal = false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-current dark:stroke-white">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="mt-5">
+                                <form method="post" action="https://formspree.io/f/xvoywoew">
+                                    <div class="grid gap-y-4">
+                                        <div>
+                                            <div class="relative">
+                                                <input type="text" id="name" name="name" class="text-slate-900 dark:text-slate-100 py-3 px-4 mb-2 block w-full border-2 dark:bg-gray-700 dark:border-gray-800 rounded-md text-sm shadow-sm outline-0 caret-green-500" required aria-describedby="name-error" placeholder="Nome">
+                                                <input type="email" id="email" name="email" class="text-slate-900 dark:text-slate-100 py-3 px-4 mb-2 block w-full border-2 dark:bg-gray-700 dark:border-gray-800 rounded-md text-sm shadow-sm outline-0 caret-green-500" required aria-describedby="email-error" placeholder="E-mail">
+                                                <textarea name="message" id="message" class="text-slate-900 dark:text-slate-100 py-3 px-4 block w-full border-2 dark:bg-gray-700 dark:border-gray-800 rounded-md text-sm shadow-sm outline-0 caret-green-500" cols="30" rows="5" required aria-describedby="message-error" placeholder="Mensagem"></textarea>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
+                                            Enviar
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                                <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="grid grid-cols-1 text-center">
+            <a href="https://weather_app.jrmessias.com.br" target="_blank" title="Weather App" class="btn-link">
+                Weather App
+            </a>
+            <a href="https://vuemon.jrmessias.com.br" target="_blank" title="Vuemon" class="btn-link">
+                Vuemon
+            </a>
+            <a href="https://vuedex-go.jrmessias.com.br" target="_blank" title="Vuedéx Go" class="btn-link">
+                Vuedéx Go
+            </a>
+            <a href="https://jrmessias-react-calculator.netlify.app/" target="_blank" title="React Calculator"
+               class="btn-link">
+                React Calculator
+            </a>
+        </div>
+        <p class="pt-8 text-center text-slate-600 w-full inline-block align-middle">
+            Made with
+            <a href="https://tailwindcss.com/" target="_blank" title="Tailwind CSS">
+                <svg xmlns="http://www.w3.org/2000/svg" class="inline stroke-1" width="24" height="24"
+                     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M11.667 6c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 2 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968zm-4 6.5c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 1.975 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968z"></path>
+                </svg>
+            </a>
+            and
+            <a href="https://vitejs.dev/" target="_blank" title="Vite">
+                <svg xmlns="http://www.w3.org/2000/svg" class="inline stroke-1" width="24" height="24"
+                     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M10 4.5l6 -1.5l-2 6.5l2 -.5l-4 7v-5l-3 1z"></path>
+                    <path d="M15 6.5l7 -1.5l-10 17l-10 -17l7.741 1.5"></path>
+                </svg>
+            </a>
+        </p>
+        <div class="fixed top-5 right-5">
+            <button id="theme-toggle" type="button">
+                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                          fill-rule="evenodd" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
     </div>
-    <div class="fixed top-5 right-5">
-        <button id="theme-toggle" @click="toggleTheme" type="button" class="border-0 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 focus:outline-none rounded-full text-sm p-2 dark:bg-slate-800 cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" class=" w-5 h-5" viewBox="0 0 20 20" fill="currentColor" x-show="!isDark">
-                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" x-show="isDark">
-                <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
-            </svg>
-        </button>
-    </div>
-</main>
+</div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
