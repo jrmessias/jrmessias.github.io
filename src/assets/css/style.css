@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: "Inter", sans-serif;
+    --font-display--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    --font-display--font-variation-settings: "opsz" 32;
+}
+
+:root {
+    color-scheme: dark light;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: light-dark(rgb(203 213 225), rgb(51 65 85));
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #007bff, #0056b3);
+    border-radius: 6px;
+}
+
