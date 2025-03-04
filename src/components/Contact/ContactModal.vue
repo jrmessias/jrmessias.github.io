@@ -25,7 +25,7 @@
                   <textarea name="message" id="message" class="text-slate-900 dark:text-slate-100 py-3 px-4 block w-full border-2 border-none bg-slate-200 dark:bg-gray-700 dark:border-gray-800 rounded-md text-sm shadow-sm outline-0 caret-green-500" cols="30" rows="5" required aria-describedby="message-error" placeholder="Mensagem"></textarea>
                 </div>
               </div>
-              <button type="submit" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-emerald-500 text-white hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
+              <button type="submit" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-imj-500 text-white hover:bg-imj-600 focus:outline-none focus:ring-2 focus:ring-imj-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
                 Enviar
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>

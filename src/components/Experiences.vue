@@ -7,7 +7,7 @@
           :key="index"
           @click="selectItem(index)"
           class="py-3 px-4 text-left rounded-md transition-colors text-white cursor-pointer"
-          :class="selectedIndex === index ? 'bg-emerald-500 text-white' : 'bg-emerald-700 hover:bg-emerald-600'"
+          :class="selectedIndex === index ? 'bg-imj-500 text-white' : 'bg-imj-700 hover:bg-imj-600'"
       >
         {{ item.title }}
       </button>

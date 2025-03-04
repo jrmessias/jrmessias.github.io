@@ -1,0 +1,15 @@
+{
+  "short_name": "IMJ",
+  "name": "IMJ - Web Developer",
+  "icons": [
+    {
+      "src": "/assets/images/favicon/favicon-196x196.png",
+      "sizes": "196x196",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#00BC7DFF",
+  "background_color": "#ffffff"
+}

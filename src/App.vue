@@ -16,7 +16,6 @@ import ResponsiveBarSizes from "./components/ResponsiveBarSizes.vue";
     <div class="flex items-center justify-center w-full flex-col">
       <div class="container content-center">
         <!--Main Navigation-->
-<!--                <ResponsiveBarSizes />-->
         <Nav/>
         <Profile class="pt-10"/>
         <div class="flex w-full justify-center">
@@ -24,7 +23,7 @@ import ResponsiveBarSizes from "./components/ResponsiveBarSizes.vue";
             <!--Sobre mim-->
             <section class="pb-20">
               <ButtonSection emoji="🧐" title="Sobre mim" anchor="sobre-mim"/>
-              <h2 class="text-emerald-500 text-4xl py-5 font-bold">Israel Messias Júnior</h2>
+              <h2 class="text-imj-500 text-4xl py-5 font-bold">Israel Messias Júnior</h2>
               <p class="text-gray-800 dark:text-gray-300 text-justify">👋 Sou desenvolvedor de sistemas e professor de
                 programação e
                 tecnologias. Atuo como Analista de Sistemas na empresa iopoint Tecnologia desenvolvendo
@@ -37,7 +36,7 @@ import ResponsiveBarSizes from "./components/ResponsiveBarSizes.vue";
             <!--Experiências-->
             <section class="pb-20">
               <ButtonSection emoji="🚀" title="Trajetória" anchor="experiencias"/>
-              <h2 class="text-emerald-500 text-4xl py-5 font-bold">Experiências</h2>
+              <h2 class="text-imj-500 text-4xl py-5 font-bold">Experiências</h2>
               <Experiences/>
             </section>
 
@@ -46,7 +45,7 @@ import ResponsiveBarSizes from "./components/ResponsiveBarSizes.vue";
             <!--              <div class="flex lg:justify-center pt-10">-->
             <!--                <ButtonSection emoji="🔥" title="Projetos" anchor="projetos"/>-->
             <!--              </div>-->
-            <!--              <h2 class="text-emerald-500 text-4xl py-5 font-bold">Projetos</h2>-->
+            <!--              <h2 class="text-imj-500 text-4xl py-5 font-bold">Projetos</h2>-->
             <!--              <Projects />-->
             <!--            </section>-->
 
@@ -55,7 +54,7 @@ import ResponsiveBarSizes from "./components/ResponsiveBarSizes.vue";
               <div class="flex lg:justify-center pt-10">
                 <ButtonSection emoji="🤯" title="Conhecimentos" anchor="habilidades"/>
               </div>
-              <h2 class="text-emerald-500 text-4xl py-5 font-bold text-center">Habilidades</h2>
+              <h2 class="text-imj-500 text-4xl py-5 font-bold text-center">Habilidades</h2>
               <Skills/>
             </section>
 
@@ -64,7 +63,7 @@ import ResponsiveBarSizes from "./components/ResponsiveBarSizes.vue";
               <div class="flex lg:justify-center pt-10">
                 <ButtonSection emoji="☕" title="Contato" anchor="contato"/>
               </div>
-              <h2 class="text-emerald-500 text-4xl py-5 font-bold text-center">Fale comigo</h2>
+              <h2 class="text-imj-500 text-4xl py-5 font-bold text-center">Fale comigo</h2>
               <div class="flex flex-wrap justify-center">
                 <Contact/>
                 <ContactWidget/>

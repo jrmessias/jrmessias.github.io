@@ -7,6 +7,17 @@
     --font-sans: "Inter", sans-serif;
     --font-display--font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     --font-display--font-variation-settings: "opsz" 32;
+    --color-imj-50:  var(--color-emerald-50);
+    --color-imj-100: var(--color-emerald-100);
+    --color-imj-200: var(--color-emerald-200);
+    --color-imj-300: var(--color-emerald-300);
+    --color-imj-400: var(--color-emerald-400);
+    --color-imj-500: var(--color-emerald-500);
+    --color-imj-600: var(--color-emerald-600);
+    --color-imj-700: var(--color-emerald-700);
+    --color-imj-800: var(--color-emerald-800);
+    --color-imj-900: var(--color-emerald-900);
+    --color-imj-950: var(--color-emerald-950);
 }
 
 :root {

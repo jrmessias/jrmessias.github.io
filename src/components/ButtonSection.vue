@@ -4,8 +4,8 @@ const props = defineProps(['title', 'emoji', 'anchor'])
 
 <template>
   <div
-      class="flex w-48 2xl:w-1/4  mt-4 rounded-sm p-2 justify-center border dark:bg-emerald-600/25  dark:border-emerald-700 border-emerald-400 bg-emerald-500">
-    <div class="text-gray-100 dark:text-emerald-500 text-center" :id="props.anchor">
+      class="flex w-48 2xl:w-1/4  mt-4 rounded-sm p-2 justify-center border dark:bg-imj-600/25  dark:border-imj-700 border-imj-400 bg-imj-500">
+    <div class="text-gray-100 dark:text-imj-500 text-center" :id="props.anchor">
       {{  props.emoji }} {{  props.title }}
     </div>
   </div>

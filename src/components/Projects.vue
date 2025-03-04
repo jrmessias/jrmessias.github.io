@@ -4,13 +4,13 @@
     <div v-if="index % 2 != 0" class="grid grid-cols-2 gap-4 grid-rows-subgrid">
       <div class="text-gray-200">
         <h3 class="text-2xl pb-5 font-bold">{{ project.title }}</h3>
-        <div class="p-4 bg-emerald-800 w-full rounded-md mb-10">
+        <div class="p-4 bg-imj-800 w-full rounded-md mb-10">
           {{ project.content }}
         </div>
       </div>
       <div>
         <div class="w-full h-full relative">
-          <a class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-emerald-500 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30 rounded-lg"
+          <a class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-imj-500 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30 rounded-lg"
              href="#">
           </a>
           <img class="rounded-lg -z-20" :src="project.image"/>
@@ -21,7 +21,7 @@
     <div v-if="index % 2 != 1" class="grid grid-cols-2 gap-4 grid-rows-subgrid">
       <div>
         <div class="w-full h-full relative">
-          <a class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-emerald-500 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30 rounded-lg"
+          <a class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-imj-500 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30 rounded-lg"
              href="#">
           </a>
           <img class="object-cover -z-20" :src="project.image"/>
@@ -29,7 +29,7 @@
       </div>
       <div class="text-gray-200">
         <h3 class="text-2xl pb-5 font-bold">{{ project.title }}</h3>
-        <div class="p-4 bg-emerald-800 w-full rounded-md mb-10">
+        <div class="p-4 bg-imj-800 w-full rounded-md mb-10">
           {{ project.content }}
         </div>
       </div>

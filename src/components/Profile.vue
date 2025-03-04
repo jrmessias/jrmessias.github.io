@@ -15,7 +15,7 @@
         <div
             class="flex flex-col text-start py-4 text-base font-medium text-slate-500 dark:text-slate-400">
           <p class=" text-slate-700 dark:text-slate-100 text-3xl pb-3">Olá, eu sou</p>
-          <h1 class="text-emerald-500 text-4xl pb-5">Israel Messias Júnior</h1>
+          <h1 class="text-imj-500 text-4xl pb-5">Israel Messias Júnior</h1>
           <h2>Analista de Sistemas - <a href="http://www.iopoint.com.br" target="_blank">iopoint</a></h2>
           <h2>Professor - <a href="http://www.iopoint.com.br" target="_blank">SENAC SMO</a></h2>
         </div>
