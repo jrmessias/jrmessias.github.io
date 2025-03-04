@@ -7,7 +7,7 @@
         :title="skill.title"
     >
       <div v-html="skill.icon" class="align-middle self-center"></div>
-      <small class="text-emerald-500">{{ skill.title }}</small>
+      <small class="text-emerald-500 pt-1">{{ skill.title }}</small>
     </div>
   </div>
 </template>

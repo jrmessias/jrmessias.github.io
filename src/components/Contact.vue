@@ -8,7 +8,7 @@
         target="_blank"
     >
       <div v-html="contact.icon" class="align-middle self-center"></div>
-      <small class="text-emerald-100">{{ contact.title }}</small>
+      <small class="text-emerald-100 pt-1">{{ contact.title }}</small>
     </a>
 </template>
 
