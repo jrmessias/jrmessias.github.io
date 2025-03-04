@@ -11,13 +11,14 @@ export default defineConfig({
     build: {
         outDir: '../dist'
     },
+    publicDir: 'public',
+    includeAssets: ['src/public/*'],
     plugins: [
         vue(),
         tailwindcss(),
         VitePWA({
             registerType: 'autoUpdate',
             injectRegister: 'auto',
-            includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
             manifest: {
                 name: 'IMJ - Desenvolvedor web',
                 short_name: 'IMJ.DEV',
@@ -55,5 +56,5 @@ export default defineConfig({
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url))
         }
-    }
+    },
 })
