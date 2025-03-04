@@ -14,7 +14,42 @@ export default defineConfig({
     plugins: [
         vue(),
         tailwindcss(),
-        VitePWA({registerType: 'autoUpdate'})
+        VitePWA({
+            registerType: 'autoUpdate',
+            injectRegister: 'auto',
+            includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
+            manifest: {
+                name: 'IMJ - Desenvolvedor web',
+                short_name: 'IMJ.DEV',
+                lang: 'pt-BR',
+                description: 'Conheça o portfólio de Israel Messias Junior, especialista em desenvolvimento web e mobile, professor e apaixonado por inovação.',
+                theme_color: '#ffffff',
+                icons: [
+                    {
+                        src: 'pwa-192x192.png',
+                        sizes: '192x192',
+                        type: 'image/png'
+                    },
+                    {
+                        src: 'pwa-512x512.png',
+                        sizes: '512x512',
+                        type: 'image/png'
+                    },
+                    {
+                        src: 'pwa-512x512.png',
+                        sizes: '512x512',
+                        type: 'image/png',
+                        purpose: 'any'
+                    },
+                    {
+                        src: 'pwa-512x512.png',
+                        sizes: '512x512',
+                        type: 'image/png',
+                        purpose: 'maskable'
+                    }
+                ]
+            }
+        })
     ],
     resolve: {
         alias: {
