@@ -8,7 +8,6 @@ import Skills from "./components/Skills.vue";
 import Contact from "./components/Contact.vue";
 import ContactWidget from "./components/Contact/ContactWidget.vue";
 import Nav from "./components/Nav.vue";
-import ResponsiveBarSizes from "./components/ResponsiveBarSizes.vue";
 </script>
 
 <template>
@@ -25,8 +24,7 @@ import ResponsiveBarSizes from "./components/ResponsiveBarSizes.vue";
               <ButtonSection emoji="🧐" title="Sobre mim" anchor="sobre-mim"/>
               <h2 class="text-imj-500 text-4xl py-5 font-bold">Israel Messias Júnior</h2>
               <p class="text-gray-800 dark:text-gray-300 text-justify">👋 Sou desenvolvedor de sistemas e professor de
-                programação e
-                tecnologias. Atuo como Analista de Sistemas na empresa iopoint Tecnologia desenvolvendo
+                programação e tecnologias. Atuo como Analista de Sistemas na empresa iopoint Tecnologia desenvolvendo
                 soluções SaaS com PHP, Laravel e Angular e aplicativo com Flutter e leciono no SENAC em São Miguel do
                 Oeste, Santa Catarina. Sou graduado em Sistemas de Informação e possuo diversas pós-graduações.
                 Participo de eventos como o Techstars Startup Weekends, Hackatons e eventos de inovação. Minhas
@@ -79,6 +77,5 @@ import ResponsiveBarSizes from "./components/ResponsiveBarSizes.vue";
   <ButtomToggleTheme/>
 
 </template>
-
 <style scoped>
 </style>
