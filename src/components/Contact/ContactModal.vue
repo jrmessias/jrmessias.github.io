@@ -7,7 +7,14 @@
     <div class="mt-7 bg-slate-50  rounded-xl shadow-lg dark:bg-gray-800 dark:border-gray-700" @click.stop>
       <div class="p-4 sm:p-7">
         <div class="flex items-center justify-between">
-          <h2 class="block text-2xl font-bold text-gray-800 dark:text-white">😀 Bem vindo, vamos conversar!</h2>
+          <h2 class="inline-flex items-center gap-2 text-2xl font-bold font-display text-gray-800 dark:text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="stroke-imj-500 shrink-0">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"/>
+              <path d="M3 7l9 6l9 -6"/>
+            </svg>
+            Bem vindo, vamos conversar!
+          </h2>
           <div class="w-10"></div>
           <button type="button" class="z-50 cursor-pointer" @click="handleClose">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-slate-400 dark:stroke-white">

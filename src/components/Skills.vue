@@ -1,182 +1,164 @@
 <template>
-  <div class="flex flex-wrap justify-center">
-    <div
-        v-for="(skill, index) in skills"
-        :key="index"
-        class="basis-32 m-2 flex flex-col justify-center py-3 px-4 rounded-md transition-colors text-white cursor-pointer text-center border border-imj-500 hover:border-imj-400 dark:hover:border-imj-700 hover:bg-imj-500/20"
-        :title="skill.title"
-    >
-      <div v-html="skill.icon" class="align-middle self-center"></div>
-      <small class="text-imj-500 pt-1">{{ skill.title }}</small>
+  <div ref="containerRef" class="flex flex-col gap-10">
+    <div v-for="(group, gi) in groups" :key="gi">
+      <h3 class="text-xs font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-4 text-center">
+        {{ group.label }}
+      </h3>
+      <div class="flex flex-wrap justify-center">
+        <div
+            v-for="(skill, si) in group.skills"
+            :key="si"
+            class="skill-card basis-28 m-2 flex flex-col justify-center py-3 px-4 rounded-md transition-colors text-white cursor-default text-center border border-imj-500 hover:border-imj-400 dark:hover:border-imj-700 hover:bg-imj-500/20"
+            :style="{ transitionDelay: `${(gi * 4 + si) * 55}ms` }"
+            :title="skill.title"
+        >
+          <div v-html="skill.icon" class="align-middle self-center"></div>
+          <small class="text-imj-500 pt-1 text-xs">{{ skill.title }}</small>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
 
-const skills = [
+const containerRef = ref(null)
+
+const svgBase = (paths, strokeWidth = '1.5') =>
+  `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${strokeWidth}" stroke-linecap="round" stroke-linejoin="round" class="stroke-imj-500"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>${paths}</svg>`
+
+const groups = [
   {
-    title: 'PHP',
-    icon: '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="stroke-imj-500">' +
-        '<path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-10 0a10 9 0 1 0 20 0a10 9 0 1 0 -20 0" />' +
-        '<path d="M5.5 15l.395 -1.974l.605 -3.026h1.32a1 1 0 0 1 .986 1.164l-.167 1a1 1 0 0 1 -.986 .836h-1.653" />' +
-        '<path d="M15.5 15l.395 -1.974l.605 -3.026h1.32a1 1 0 0 1 .986 1.164l-.167 1a1 1 0 0 1 -.986 .836h-1.653" />' +
-        '<path d="M12 7.5l-1 5.5" /><path d="M11.6 10h2.4l-.5 3" />' +
-        '</svg>'
+    label: 'Back-end',
+    skills: [
+      {
+        title: 'PHP',
+        icon: svgBase('<path d="M12 12m-10 0a10 9 0 1 0 20 0a10 9 0 1 0 -20 0" /><path d="M5.5 15l.395 -1.974l.605 -3.026h1.32a1 1 0 0 1 .986 1.164l-.167 1a1 1 0 0 1 -.986 .836h-1.653" /><path d="M15.5 15l.395 -1.974l.605 -3.026h1.32a1 1 0 0 1 .986 1.164l-.167 1a1 1 0 0 1 -.986 .836h-1.653" /><path d="M12 7.5l-1 5.5" /><path d="M11.6 10h2.4l-.5 3" />'),
+      },
+      {
+        title: 'Laravel',
+        icon: svgBase('<path d="M3 17l8 5l7 -4v-8l-4 -2.5l4 -2.5l4 2.5v4l-11 6.5l-4 -2.5v-7.5l-4 -2.5z" /><path d="M11 18v4" /><path d="M7 15.5l7 -4" /><path d="M14 7.5v4" /><path d="M14 11.5l4 2.5" /><path d="M11 13v-7.5l-4 -2.5l-4 2.5" /><path d="M7 8l4 -2.5" /><path d="M18 10l4 -2.5" />'),
+      },
+      {
+        title: 'SQL',
+        icon: svgBase('<path d="M12 8a2 2 0 0 1 2 2v4a2 2 0 1 1 -4 0v-4a2 2 0 0 1 2 -2z" /><path d="M17 8v8h4" /><path d="M13 15l1 1" /><path d="M3 15a1 1 0 0 0 1 1h2a1 1 0 0 0 1 -1v-2a1 1 0 0 0 -1 -1h-2a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1" />'),
+      },
+      {
+        title: 'MySQL',
+        icon: svgBase('<path d="M13 21c-1.427 -1.026 -3.59 -3.854 -4 -6c-.486 .77 -1.501 2 -2 2c-1.499 -.888 -.574 -3.973 0 -6c-1.596 -1.433 -2.468 -2.458 -2.5 -4c-3.35 -3.44 -.444 -5.27 2.5 -3h1c8.482 .5 6.421 8.07 9 11.5c2.295 .522 3.665 2.254 5 3.5c-2.086 -.2 -2.784 -.344 -3.5 0c.478 1.64 2.123 2.2 3.5 3" /><path d="M9 7h.01" />'),
+      },
+      {
+        title: "API's",
+        icon: svgBase('<path d="M4 13h5" /><path d="M12 16v-8h3a2 2 0 0 1 2 2v1a2 2 0 0 1 -2 2h-3" /><path d="M20 8v8" /><path d="M9 16v-5.5a2.5 2.5 0 0 0 -5 0v5.5" />'),
+      },
+    ],
   },
   {
-    title: 'Laravel',
-    icon: '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="stroke-imj-500">' +
-        '<path stroke="none" d="M0 0h24v24H0z" fill="none"/>' +
-        '<path d="M3 17l8 5l7 -4v-8l-4 -2.5l4 -2.5l4 2.5v4l-11 6.5l-4 -2.5v-7.5l-4 -2.5z" />' +
-        '<path d="M11 18v4" />' +
-        '<path d="M7 15.5l7 -4" />' +
-        '<path d="M14 7.5v4" /><path d="M14 11.5l4 2.5" />' +
-        '<path d="M11 13v-7.5l-4 -2.5l-4 2.5" />' +
-        '<path d="M7 8l4 -2.5" />' +
-        '<path d="M18 10l4 -2.5" />' +
-        '</svg>'
+    label: 'Front-end',
+    skills: [
+      {
+        title: 'Javascript',
+        icon: svgBase('<path d="M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z" /><path d="M7.5 8h3v8l-2 -1" /><path d="M16.5 8h-2.5a.5 .5 0 0 0 -.5 .5v3a.5 .5 0 0 0 .5 .5h1.423a.5 .5 0 0 1 .495 .57l-.418 2.93l-2 .5" />'),
+      },
+      {
+        title: 'Typescript',
+        icon: svgBase('<path d="M15 17.5c.32 .32 .754 .5 1.207 .5h.543c.69 0 1.25 -.56 1.25 -1.25v-.25a1.5 1.5 0 0 0 -1.5 -1.5a1.5 1.5 0 0 1 -1.5 -1.5v-.25c0 -.69 .56 -1.25 1.25 -1.25h.543c.453 0 .887 .18 1.207 .5" /><path d="M9 12h4" /><path d="M11 12v6" /><path d="M21 19v-14a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2 -2z" />'),
+      },
+      {
+        title: 'Angular',
+        icon: svgBase('<path d="M5.428 17.245l6.076 3.471a1 1 0 0 0 .992 0l6.076 -3.471a1 1 0 0 0 .495 -.734l1.323 -9.704a1 1 0 0 0 -.658 -1.078l-7.4 -2.612a1 1 0 0 0 -.665 0l-7.399 2.613a1 1 0 0 0 -.658 1.078l1.323 9.704a1 1 0 0 0 .495 .734z" /><path d="M9 15l3 -8l3 8" /><path d="M10 13h4" />'),
+      },
+      {
+        title: 'Vue',
+        icon: svgBase('<path d="M16.5 4l-4.5 8l-4.5 -8" /><path d="M3 4l9 16l9 -16" />'),
+      },
+      {
+        title: 'React',
+        icon: svgBase('<path d="M6.306 8.711c-2.602 .723 -4.306 1.926 -4.306 3.289c0 2.21 4.477 4 10 4c.773 0 1.526 -.035 2.248 -.102" /><path d="M17.692 15.289c2.603 -.722 4.308 -1.926 4.308 -3.289c0 -2.21 -4.477 -4 -10 -4c-.773 0 -1.526 .035 -2.25 .102" /><path d="M6.305 15.287c-.676 2.615 -.485 4.693 .695 5.373c1.913 1.105 5.703 -1.877 8.464 -6.66c.387 -.67 .733 -1.339 1.036 -2" /><path d="M17.694 8.716c.677 -2.616 .487 -4.696 -.694 -5.376c-1.913 -1.105 -5.703 1.877 -8.464 6.66c-.387 .67 -.733 1.34 -1.037 2" /><path d="M12 5.424c-1.925 -1.892 -3.82 -2.766 -5 -2.084c-1.913 1.104 -1.226 5.877 1.536 10.66c.386 .67 .793 1.304 1.212 1.896" /><path d="M12 18.574c1.926 1.893 3.821 2.768 5 2.086c1.913 -1.104 1.226 -5.877 -1.536 -10.66c-.375 -.65 -.78 -1.283 -1.212 -1.897" /><path d="M11.5 12.866a1 1 0 1 0 1 -1.732a1 1 0 0 0 -1 1.732" />'),
+      },
+      {
+        title: 'CSS',
+        icon: svgBase('<path d="M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z" /><path d="M8.5 8h7l-4.5 4h4l-.5 3.5l-2.5 .75l-2.5 -.75l-.1 -.5" />'),
+      },
+      {
+        title: 'Tailwind',
+        icon: svgBase('<path d="M11.667 6c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 2 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968zm-4 6.5c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 1.975 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968z" />'),
+      },
+      {
+        title: 'Bootstrap',
+        icon: svgBase('<path d="M2 12a2 2 0 0 0 2 -2v-4a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2" /><path d="M2 12a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-4a2 2 0 0 1 2 -2" /><path d="M9 16v-8h3.5a2 2 0 1 1 0 4h-3.5h4a2 2 0 1 1 0 4h-4z" />'),
+      },
+      {
+        title: 'Wordpress',
+        icon: svgBase('<path d="M9.5 9h3" /><path d="M4 9h2.5" /><path d="M11 9l3 11l4 -9" /><path d="M5.5 9l3.5 11l3 -7" /><path d="M18 11c.177 -.528 1 -1.364 1 -2.5c0 -1.78 -.776 -2.5 -1.875 -2.5c-.898 0 -1.125 .812 -1.125 1.429c0 1.83 2 2.058 2 3.571z" /><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />', '2'),
+      },
+    ],
   },
   {
-    title: 'Wordpress',
-    icon: '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="stroke-imj-500">' +
-        '<path stroke="none" d="M0 0h24v24H0z" fill="none"/>' +
-        '<path d="M9.5 9h3" />' +
-        '<path d="M4 9h2.5" />' +
-        '<path d="M11 9l3 11l4 -9" />' +
-        '<path d="M5.5 9l3.5 11l3 -7" />' +
-        '<path d="M18 11c.177 -.528 1 -1.364 1 -2.5c0 -1.78 -.776 -2.5 -1.875 -2.5c-.898 0 -1.125 .812 -1.125 1.429c0 1.83 2 2.058 2 3.571z" />' +
-        '<path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />' +
-        '</svg>'
+    label: 'Mobile',
+    skills: [
+      {
+        title: 'Flutter',
+        icon: svgBase('<path d="M7 14l-3 -3l8 -8h6z" /><path d="M14 21l-5 -5l5 -5h5l-5 5l5 5z" />'),
+      },
+    ],
   },
   {
-    title: 'SQL',
-    icon: '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="stroke-imj-500">' +
-        '<path stroke="none" d="M0 0h24v24H0z" fill="none"/>' +
-        '<path d="M12 8a2 2 0 0 1 2 2v4a2 2 0 1 1 -4 0v-4a2 2 0 0 1 2 -2z" />' +
-        '<path d="M17 8v8h4" />' +
-        '<path d="M13 15l1 1" /><path d="M3 15a1 1 0 0 0 1 1h2a1 1 0 0 0 1 -1v-2a1 1 0 0 0 -1 -1h-2a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1" />' +
-        '</svg>'
+    label: 'Ferramentas',
+    skills: [
+      {
+        title: 'Git',
+        icon: svgBase('<path d="M16 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M12 8m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M12 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M12 15v-6" /><path d="M15 11l-2 -2" /><path d="M11 7l-1.9 -1.9" /><path d="M13.446 2.6l7.955 7.954a2.045 2.045 0 0 1 0 2.892l-7.955 7.955a2.045 2.045 0 0 1 -2.892 0l-7.955 -7.955a2.045 2.045 0 0 1 0 -2.892l7.955 -7.955a2.045 2.045 0 0 1 2.892 0z" />', '1.25'),
+      },
+      {
+        title: 'Vite',
+        icon: svgBase('<path d="M10 4.5l6 -1.5l-2 6.5l2 -.5l-4 7v-5l-3 1z" /><path d="M15 6.5l7 -1.5l-10 17l-10 -17l7.741 1.5" />'),
+      },
+      {
+        title: 'Figma',
+        icon: svgBase('<path d="M15 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6 3m0 3a3 3 0 0 1 3 -3h6a3 3 0 0 1 3 3v0a3 3 0 0 1 -3 3h-6a3 3 0 0 1 -3 -3z" /><path d="M9 9a3 3 0 0 0 0 6h3m-3 0a3 3 0 1 0 3 3v-15" />'),
+      },
+    ],
   },
-  {
-    title: 'MySQL',
-    icon: '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="stroke-imj-500">' +
-        '<path stroke="none" d="M0 0h24v24H0z" fill="none"/>' +
-        '<path d="M13 21c-1.427 -1.026 -3.59 -3.854 -4 -6c-.486 .77 -1.501 2 -2 2c-1.499 -.888 -.574 -3.973 0 -6c-1.596 -1.433 -2.468 -2.458 -2.5 -4c-3.35 -3.44 -.444 -5.27 2.5 -3h1c8.482 .5 6.421 8.07 9 11.5c2.295 .522 3.665 2.254 5 3.5c-2.086 -.2 -2.784 -.344 -3.5 0c.478 1.64 2.123 2.2 3.5 3" />' +
-        '<path d="M9 7h.01" />' +
-        '</svg>'
-  },
-  {
-    title: 'Javascript',
-    icon: '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="stroke-imj-500">' +
-        '<path stroke="none" d="M0 0h24v24H0z" fill="none"/>' +
-        '<path d="M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z" />' +
-        '<path d="M7.5 8h3v8l-2 -1" /><path d="M16.5 8h-2.5a.5 .5 0 0 0 -.5 .5v3a.5 .5 0 0 0 .5 .5h1.423a.5 .5 0 0 1 .495 .57l-.418 2.93l-2 .5" />' +
-        '</svg>',
-  },
-  {
-    title: 'Typescript',
-    icon: '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="stroke-imj-500">' +
-        '<path stroke="none" d="M0 0h24v24H0z" fill="none"/>' +
-        '<path d="M15 17.5c.32 .32 .754 .5 1.207 .5h.543c.69 0 1.25 -.56 1.25 -1.25v-.25a1.5 1.5 0 0 0 -1.5 -1.5a1.5 1.5 0 0 1 -1.5 -1.5v-.25c0 -.69 .56 -1.25 1.25 -1.25h.543c.453 0 .887 .18 1.207 .5" />' +
-        '<path d="M9 12h4" /><path d="M11 12v6" /><path d="M21 19v-14a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2 -2z" />' +
-        '</svg>'
-  },
-  {
-    title: 'Angular',
-    icon: '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="stroke-imj-500">' +
-        '<path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5.428 17.245l6.076 3.471a1 1 0 0 0 .992 0l6.076 -3.471a1 1 0 0 0 .495 -.734l1.323 -9.704a1 1 0 0 0 -.658 -1.078l-7.4 -2.612a1 1 0 0 0 -.665 0l-7.399 2.613a1 1 0 0 0 -.658 1.078l1.323 9.704a1 1 0 0 0 .495 .734z" />' +
-        '<path d="M9 15l3 -8l3 8" /><path d="M10 13h4" />' +
-        '</svg>'
-  },
-  {
-    title: 'Vue',
-    icon: '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="stroke-imj-500">' +
-        '<path stroke="none" d="M0 0h24v24H0z" fill="none"/>' +
-        '<path d="M16.5 4l-4.5 8l-4.5 -8" />' +
-        '<path d="M3 4l9 16l9 -16" />' +
-        '</svg>'
-  },
-  {
-    title: 'React',
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="stroke-imj-500">' +
-        '<path stroke="none" d="M0 0h24v24H0z" fill="none" />' +
-        '<path d="M6.306 8.711c-2.602 .723 -4.306 1.926 -4.306 3.289c0 2.21 4.477 4 10 4c.773 0 1.526 -.035 2.248 -.102" />' +
-        '<path d="M17.692 15.289c2.603 -.722 4.308 -1.926 4.308 -3.289c0 -2.21 -4.477 -4 -10 -4c-.773 0 -1.526 .035 -2.25 .102" />' +
-        '<path d="M6.305 15.287c-.676 2.615 -.485 4.693 .695 5.373c1.913 1.105 5.703 -1.877 8.464 -6.66c.387 -.67 .733 -1.339 1.036 -2" />' +
-        '<path d="M17.694 8.716c.677 -2.616 .487 -4.696 -.694 -5.376c-1.913 -1.105 -5.703 1.877 -8.464 6.66c-.387 .67 -.733 1.34 -1.037 2" />' +
-        '<path d="M12 5.424c-1.925 -1.892 -3.82 -2.766 -5 -2.084c-1.913 1.104 -1.226 5.877 1.536 10.66c.386 .67 .793 1.304 1.212 1.896" />' +
-        '<path d="M12 18.574c1.926 1.893 3.821 2.768 5 2.086c1.913 -1.104 1.226 -5.877 -1.536 -10.66c-.375 -.65 -.78 -1.283 -1.212 -1.897" />' +
-        '<path d="M11.5 12.866a1 1 0 1 0 1 -1.732a1 1 0 0 0 -1 1.732" />' +
-        '</svg>'
-  },
-  {
-    title: 'Vite',
-    icon: '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="stroke-imj-500">' +
-        '<path stroke="none" d="M0 0h24v24H0z" fill="none"/>' +
-        '<path d="M10 4.5l6 -1.5l-2 6.5l2 -.5l-4 7v-5l-3 1z" />' +
-        '<path d="M15 6.5l7 -1.5l-10 17l-10 -17l7.741 1.5" />' +
-        '</svg>'
-  },
-  {
-    title: 'Figma',
-    icon: '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="stroke-imj-500">' +
-        '<path stroke="none" d="M0 0h24v24H0z" fill="none"/>' +
-        '<path d="M15 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />' +
-        '<path d="M6 3m0 3a3 3 0 0 1 3 -3h6a3 3 0 0 1 3 3v0a3 3 0 0 1 -3 3h-6a3 3 0 0 1 -3 -3z" />' +
-        '<path d="M9 9a3 3 0 0 0 0 6h3m-3 0a3 3 0 1 0 3 3v-15" />' +
-        '</svg>',
-  },
-  {
-    title: 'CSS',
-    icon: '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="stroke-imj-500">' +
-        '<path stroke="none" d="M0 0h24v24H0z" fill="none"/>' +
-        '<path d="M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z" /><path d="M8.5 8h7l-4.5 4h4l-.5 3.5l-2.5 .75l-2.5 -.75l-.1 -.5" />' +
-        '</svg>'
-  },
-  {
-    title: 'tailwindcss',
-    icon: '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="stroke-imj-500">' +
-        '<path stroke="none" d="M0 0h24v24H0z" fill="none"/>' +
-        '<path d="M11.667 6c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 2 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968zm-4 6.5c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 1.975 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968z" />' +
-        '</svg>'
-  },
-  {
-    title: 'Bootstrap',
-    icon: '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="stroke-imj-500">' +
-        '<path stroke="none" d="M0 0h24v24H0z" fill="none"/>' +
-        '<path d="M2 12a2 2 0 0 0 2 -2v-4a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2" />' +
-        '<path d="M2 12a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-4a2 2 0 0 1 2 -2" />' +
-        '<path d="M9 16v-8h3.5a2 2 0 1 1 0 4h-3.5h4a2 2 0 1 1 0 4h-4z" />' +
-        '</svg>'
-  },
-  {
-    title: 'Flutter',
-    icon: '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="stroke-imj-500">' +
-        '<path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 14l-3 -3l8 -8h6z" />' +
-        '<path d="M14 21l-5 -5l5 -5h5l-5 5l5 5z" />' +
-        '</svg>'
-  },
-  {
-    title: 'API\'s',
-    icon: '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="stroke-imj-500">' +
-        '<path stroke="none" d="M0 0h24v24H0z" fill="none"/>' +
-        '<path d="M4 13h5" /><path d="M12 16v-8h3a2 2 0 0 1 2 2v1a2 2 0 0 1 -2 2h-3" />' +
-        '<path d="M20 8v8" /><path d="M9 16v-5.5a2.5 2.5 0 0 0 -5 0v5.5" />' +
-        '</svg>'
-  },
-  {
-    title: 'Git',
-    icon: '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.25"  stroke-linecap="round"  stroke-linejoin="round" class="stroke-imj-500">' +
-        '<path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />' +
-        '<path d="M12 8m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M12 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />' +
-        '<path d="M12 15v-6" /><path d="M15 11l-2 -2" /><path d="M11 7l-1.9 -1.9" />' +
-        '<path d="M13.446 2.6l7.955 7.954a2.045 2.045 0 0 1 0 2.892l-7.955 7.955a2.045 2.045 0 0 1 -2.892 0l-7.955 -7.955a2.045 2.045 0 0 1 0 -2.892l7.955 -7.955a2.045 2.045 0 0 1 2.892 0z" />' +
-        '</svg>'
-  },
-];
+]
+
+let observer = null
+
+onMounted(() => {
+  observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.skill-card').forEach((card) => {
+            card.classList.add('skill-visible')
+          })
+          observer.unobserve(entry.target)
+        }
+      })
+    },
+    { threshold: 0.1 }
+  )
+  if (containerRef.value) observer.observe(containerRef.value)
+})
+
+onUnmounted(() => {
+  if (observer) observer.disconnect()
+})
 </script>
 
 <style scoped>
+.skill-card {
+  opacity: 0;
+  transform: translateY(16px) scale(0.96);
+  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 0.2s,
+              border-color 0.2s;
+}
 
+.skill-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
 </style>
