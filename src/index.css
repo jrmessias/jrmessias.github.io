@@ -1,0 +1,102 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-accent: var(--accent);
+
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+:root {
+  --accent: #10b981;
+  --bg: #fafaf9;
+  --fg: #0a0a0a;
+}
+.dark { --bg: #0a0a0a; --fg: #fafafa; }
+
+html { scroll-behavior: smooth; background: var(--bg); }
+body { color: var(--fg); font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; background: transparent; font-feature-settings: 'ss01', 'cv11'; }
+h1, h2, h3 { letter-spacing: -0.02em; }
+::selection { background: var(--accent); color: #fff; }
+
+.bg-gradient-decor {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(60% 45% at 80% 0%, color-mix(in oklab, var(--accent) 22%, transparent), transparent 60%),
+    radial-gradient(50% 40% at 0% 30%, color-mix(in oklab, var(--accent) 14%, transparent), transparent 60%);
+}
+#root { position: relative; z-index: 1; }
+
+@media print {
+  @page { size: A4; margin: 14mm 14mm 16mm 14mm; }
+  html, body { background: #fff !important; color: #111 !important; font-size: 10.5pt; line-height: 1.45;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  header, footer, .no-print, .bg-gradient-decor,
+  [aria-label="Toggle theme"], [aria-label="Menu"] { display: none !important; }
+  .dark { --bg: #fff; --fg: #111; }
+  [class*="dark:bg-"] { background: transparent !important; }
+  [class*="dark:text-"] { color: #111 !important; }
+  [class*="dark:border-"] { border-color: rgba(0,0,0,.15) !important; }
+  main > section { padding: 10mm 0 !important; break-inside: avoid; }
+  main > section:first-child { padding-top: 0 !important; }
+  .max-w-6xl { max-width: 100% !important; padding-left: 0 !important; padding-right: 0 !important; }
+  main * { opacity: 1 !important; transform: none !important; transition: none !important; }
+  h1 { font-size: 22pt !important; line-height: 1.1 !important; margin-bottom: 2mm !important; }
+  h2 { font-size: 14pt !important; margin-bottom: 4mm !important; }
+  h3 { font-size: 11pt !important; }
+  p, li, a, span, div { font-size: 10.5pt; }
+  .rounded-2xl, .rounded-xl, .rounded-lg { border-radius: 6px !important; }
+  .border, [class*="border-"] { border-color: rgba(0,0,0,.12) !important; }
+  li, .group, article, .rounded-2xl { break-inside: avoid; page-break-inside: avoid; }
+  .grid.md\:grid-cols-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 4mm !important; }
+  .grid.md\:grid-cols-3 { display: grid !important; grid-template-columns: 1fr 1fr 1fr !important; gap: 4mm !important; }
+  .grid.md\:grid-cols-5 { display: grid !important; grid-template-columns: 3fr 2fr !important; gap: 6mm !important; }
+  a[href="#contact"], button { display: none !important; }
+  .aspect-\[16\/10\] { display: none !important; }
+  a[href^="http"]::after { content: " — " attr(href); font-size: 8.5pt; color: #555; word-break: break-all; }
+a.contact-card::after { content: none !important; }
+a.contact-card .contact-value { display: block !important; font-size: 10.5pt !important; font-weight: 500; color: #111 !important; margin-top: 0.5mm; white-space: normal !important; overflow: visible !important; text-overflow: clip !important; }
+a.contact-card .contact-label { display: block !important; font-size: 9pt !important; margin-bottom: 0.5mm; color: #555 !important; }
+  a.contact-card { padding: 3mm !important; border: .4pt solid rgba(0,0,0,.15) !important; display: block !important; }
+  a.contact-card > div:first-child { display: flex !important; align-items: center !important; gap: 2mm !important; }
+  a.contact-card > div:first-child > span:first-child { width: 6mm !important; height: 6mm !important; border-radius: 50% !important; background: rgba(16,185,129,.12) !important; display: grid !important; place-items: center !important; }
+  a.contact-card > span:last-child { display: none !important; }
+  #top .inline-flex { display: none !important; }
+  #top .mt-16 { margin-top: 6mm !important; padding-top: 3mm !important; }
+  #top .mt-16 > div > div:first-child { font-size: 16pt !important; }
+  section#top { padding-top: 0 !important; padding-bottom: 6mm !important; }
+  section#top .grid.md\:grid-cols-\[1fr_auto\] {
+    display: grid !important; grid-template-columns: 1fr auto !important;
+    gap: 8mm !important; align-items: start !important;
+  }
+  section#top .relative.w-64.h-64 { width: 32mm !important; height: 32mm !important; }
+  section#top .relative.w-64.h-64 span { font-size: 16pt !important; }
+  section#top .-bottom-3.-right-3 { display: none !important; }
+  section#top .hidden.md\:block { display: block !important; }
+  main > section + section { border-top: .4pt solid rgba(0,0,0,.1); }
+  ol.border-l { border-color: rgba(0,0,0,.2) !important; }
+  ol.border-l span.ring-4 { box-shadow: 0 0 0 2px #fff !important; }
+  .bg-\[var\(--accent\)\] { background: var(--accent) !important; }
+  .rounded-md { border-radius: 3px !important; }
+  .border-black\/10, .dark\:border-white\/10 { border-color: rgba(0,0,0,.15) !important; }
+}

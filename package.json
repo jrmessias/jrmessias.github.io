@@ -1,7 +1,7 @@
 {
-  "name": "jrmessias.github.io",
+  "name": "curriculo-jrmessias",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,15 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.13",
-    "optional": "^0.1.4",
-    "sharp": "^0.34.3",
-    "tailwindcss": "^4.1.13",
-    "vue": "^3.5.21"
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^6.0.1",
-    "vite": "^7.1.4",
-    "vite-plugin-pwa": "^1.0.3"
+    "@tailwindcss/postcss": "^4.2.4",
+    "@vitejs/plugin-react": "^6.0.1",
+    "postcss": "^8.5.12",
+    "tailwindcss": "^4.2.4",
+    "vite": "^8.0.10"
   }
 }
