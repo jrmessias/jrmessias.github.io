@@ -47,6 +47,24 @@ h1, h2, h3 { letter-spacing: -0.02em; }
 }
 #root { position: relative; z-index: 1; }
 
+/* Gradient Scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent), color-mix(in oklab, var(--accent) 60%, var(--fg)));
+  border-radius: 999px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, color-mix(in oklab, var(--accent) 80%, var(--fg)), var(--accent));
+}
+@media (prefers-color-scheme: dark) {
+  .dark ::-webkit-scrollbar-track { background: var(--bg); }
+}
+@supports (scrollbar-color: auto) {
+  * { scrollbar-color: var(--accent) var(--bg); scrollbar-width: thin; }
+}
+
 @media print {
   @page { size: A4; margin: 14mm 14mm 16mm 14mm; }
   html, body { background: #fff !important; color: #111 !important; font-size: 10.5pt; line-height: 1.45;
