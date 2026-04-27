@@ -12,8 +12,8 @@ export const CV_DATA = {
         },
     },
     about: {
-        pt: "Sou desenvolvedor de sistemas e professor de programação e tecnologias. Atuo como Analista de Sistemas na iopoint Tecnologia, desenvolvendo soluções SaaS com PHP, Laravel e Angular, além de aplicativos móveis com Flutter. Também leciono no SENAC em São Miguel do Oeste, Santa Catarina. Sou graduado em Sistemas de Informação e possuo diversas pós-graduações nas áreas de desenvolvimento, UX/UI, gestão e inovação. Participo ativamente de eventos como Techstars Startup Weekends, hackathons e encontros de inovação.",
-        en: "I'm a systems developer and technology instructor. I work as a Systems Analyst at iopoint Tecnologia, building SaaS solutions with PHP, Laravel and Angular, as well as mobile applications with Flutter. I also teach at SENAC in São Miguel do Oeste, Santa Catarina. I hold a degree in Information Systems and several postgraduate specializations across development, UX/UI, management and innovation. I'm an active participant in events like Techstars Startup Weekends, hackathons and innovation meetups.",
+        pt: "Sou desenvolvedor de sistemas e professor de programação e tecnologias. Atuo como Analista de Sistemas na iopoint Tecnologia, desenvolvendo soluções SaaS com PHP, Laravel e Angular, além de aplicativos móveis com Flutter. Lecionei no SENAC em São Miguel do Oeste, Santa Catarina. Sou graduado em Sistemas de Informação e possuo diversas pós-graduações nas áreas de desenvolvimento, UX/UI, gestão e inovação. Participo ativamente de eventos como Techstars Startup Weekends, hackathons e encontros de inovação.",
+        en: "I'm a systems developer and technology instructor. I work as a Systems Analyst at iopoint Tecnologia, building SaaS solutions with PHP, Laravel and Angular, as well as mobile applications with Flutter. I taught at SENAC in São Miguel do Oeste, Santa Catarina. I hold a degree in Information Systems and several postgraduate specializations across development, UX/UI, management and innovation. I'm an active participant in events like Techstars Startup Weekends, hackathons and innovation meetups.",
     },
     stats: [
         {value: "15+", label: {pt: "anos de experiência", en: "years of experience"}},
@@ -133,24 +133,26 @@ export const CV_DATA = {
     ],
     projects: [
         {
-            name: "LP Ebook — Receitas Saudáveis",
+            name: "Landing page e-book — Receitas Saudáveis",
             description: {
                 pt: "Landing page para lançamento de ebook de receitas saudáveis com foco em conversão.",
                 en: "Landing page for a healthy-recipe ebook launch, conversion-focused."
             },
             url: "https://lp-ebook-receitas-saudaveis.vercel.app/",
+            image: "/assets/lp-receitas-saudaveis.png",
             tags: ["Landing page", "Vercel", "Tailwind"],
             year: "2025"
         },
         {
-            name: "Web Design Descomplicado",
+            name: "Landing page e-book - Web Design Descomplicado",
             description: {
                 pt: "Projeto educacional sobre fundamentos de web design e desenvolvimento front-end.",
                 en: "Educational project on web-design fundamentals and front-end development."
             },
             url: "https://webdesigndescomplicado.jrmessias.com.br/",
+            image: "/assets/lp-webdesign-descomplicado.png",
             tags: ["Education", "Front-end", "UX"],
-            year: "2024"
+            year: "2025"
         },
     ],
     events: [
