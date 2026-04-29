@@ -1,4 +1,5 @@
 import { CV_DATA, COPY } from '../data.js';
+import { getLabel } from '../utils.js';
 import Section from '../components/Section.jsx';
 import Reveal from '../components/Reveal.jsx';
 import { Icon } from '../components/Icon.jsx';
@@ -24,9 +25,13 @@ export default function Projects({ lang }) {
                 </div>
                 <p className="mt-2 text-[14px] text-neutral-600 dark:text-neutral-400 leading-relaxed flex-1">{p.description[lang]}</p>
                 <div className="mt-4 flex flex-wrap gap-1.5">
-                  {p.tags.map((t) => (
-                    <span key={t} className="inline-flex items-center h-6 px-2.5 rounded-md text-[11px] font-mono text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-white/5 border border-black/10 dark:border-white/10">{t}</span>
-                  ))}
+                {p.tags.map((t, idx) => {
+                  const label = getLabel(t, lang)
+                  const key = `${label}-${idx}`
+                  return (
+                    <span key={key} className="inline-flex items-center h-6 px-2.5 rounded-md text-[11px] font-mono text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-white/5 border border-black/10 dark:border-white/10">{label}</span>
+                  )
+                })}
                 </div>
               </div>
             </a>

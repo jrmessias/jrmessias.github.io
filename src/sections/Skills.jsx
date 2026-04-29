@@ -1,4 +1,5 @@
 import { CV_DATA, COPY } from '../data.js';
+import { getLabel } from '../utils.js';
 import Section from '../components/Section.jsx';
 import Reveal from '../components/Reveal.jsx';
 
@@ -14,9 +15,13 @@ export default function Skills({ lang }) {
                 <span className="text-[11px] font-mono text-neutral-400 dark:text-neutral-500">0{i + 1}</span>
               </div>
               <div className="flex flex-wrap gap-2 flex-1">
-                {g.items.map((s) => (
-                  <span key={s} className="inline-flex items-center h-7 px-3 rounded-full text-[12px] text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-white/5 border border-transparent hover:border-(--accent)/40 hover:text-(--accent) transition-colors">{s}</span>
-                ))}
+                {g.items.map((s, idx) => {
+                  const label = getLabel(s, lang)
+                  const key = `${label}-${idx}`
+                  return (
+                    <span key={key} className="inline-flex items-center h-7 px-3 rounded-full text-[12px] text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-white/5 border border-transparent hover:border-(--accent)/40 hover:text-(--accent) transition-colors">{label}</span>
+                  )
+                })}
               </div>
             </div>
           </Reveal>

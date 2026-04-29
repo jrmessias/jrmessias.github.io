@@ -1,4 +1,5 @@
 import { CV_DATA, COPY } from '../data.js';
+import { getLabel } from '../utils.js';
 import Section from '../components/Section.jsx';
 import Reveal from '../components/Reveal.jsx';
 
@@ -20,9 +21,13 @@ export default function Experience({ lang }) {
             <p className="mt-3 text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-400 max-w-3xl">{e.description[lang]}</p>
             {e.tags && (
               <div className="mt-4 flex flex-wrap gap-1.5">
-                {e.tags.map((t) => (
-                  <span key={t} className="inline-flex items-center h-6 px-2.5 rounded-md text-[11px] font-mono text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-white/5 border border-black/10 dark:border-white/10">{t}</span>
-                ))}
+                {e.tags.map((t, idx) => {
+                  const label = getLabel(t, lang)
+                  const key = `${label}-${idx}`
+                  return (
+                    <span key={key} className="inline-flex items-center h-6 px-2.5 rounded-md text-[11px] font-mono text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-white/5 border border-black/10 dark:border-white/10">{label}</span>
+                  )
+                })}
               </div>
             )}
           </Reveal>

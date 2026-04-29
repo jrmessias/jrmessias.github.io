@@ -1,4 +1,5 @@
 import { CV_DATA, COPY } from '../data.js';
+import { getLabel } from '../utils.js';
 import Section from '../components/Section.jsx';
 import Reveal from '../components/Reveal.jsx';
 
@@ -19,11 +20,15 @@ export default function Courses({ lang }) {
                 {c.hours && <span>· {c.hours}h</span>}
               </div>
               <div className="mt-auto pt-2 flex flex-wrap gap-1.5">
-                {c.tags.map((t) => (
-                  <span key={t} className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-black/5 dark:bg-white/5 text-neutral-600 dark:text-neutral-400">
-                    {t}
-                  </span>
-                ))}
+                {c.tags.map((t, idx) => {
+                  const label = getLabel(t, lang)
+                  const key = `${label}-${idx}`
+                  return (
+                    <span key={key} className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-black/5 dark:bg-white/5 text-neutral-600 dark:text-neutral-400">
+                      {label}
+                    </span>
+                  )
+                })}
               </div>
             </div>
           </Reveal>

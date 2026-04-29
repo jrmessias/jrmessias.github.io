@@ -72,7 +72,7 @@ export const CV_DATA = {
                 pt: "Suporte técnico a hardware e software. Organização e padronização de atividades internas. Análises de melhorias para infra-estrutura. Análise, organização e encaminhamentos de melhorias aos sistemas de gestão. Otimização e redução de gastos do setor.",
                 en: "Technical support for hardware and software. Organization and standardization of internal activities. Analysis of infrastructure improvements. Analysis, organization, and implementation of improvements to management systems. Optimization and reduction of departmental expenses."
             },
-            tags: ["Suporte técnico", "Liderança"]
+            tags: [{pt: "Suporte técnico", en: "Technical support"}, {pt: "Liderança", en: "Leadership"}]
         },
         {
             company: "DB'links Sistemas",
@@ -83,7 +83,7 @@ export const CV_DATA = {
                 pt: "Análise de requisitos. Desenvolvimento de sites/sistemas personalizados e internos. Desenvolvimento de aplicativo para Android e iOS utilizando linguagens web. Padronização de documentações e processos internos. Implantação e padronização de sistema de administração para sites/sistemas. Treinamentos internos. Desenvolvimento de comércio eletrônico para supermercados integrado com ERP. Desenvolvimento de template e personalização de Wordpress. Análise de dados. Atendimento ao cliente. Liderança de equipe.",
                 en: "Requirements analysis. Development of custom and internal websites/systems. Development of Android and iOS applications using web languages. Standardization of internal documentation and processes. Implementation and standardization of administration systems for websites/systems. Internal training. Development of e-commerce for supermarkets integrated with ERP. WordPress template development and customization. Data analysis. Customer service. Team leadership."
             },
-            tags: ["Full-stack", "WordPress", "E-commerce", "Liderança"]
+            tags: ["Full-stack", "WordPress", "E-commerce", {pt: "Liderança", en: "Leadership"}]
         },
         {
             company: "SENAC",
@@ -173,7 +173,7 @@ export const CV_DATA = {
             },
             url: "https://lp-ebook-receitas-saudaveis.vercel.app/",
             image: "/assets/lp-receitas-saudaveis.png",
-            tags: ["Landing page", "Vercel", "Tailwind"],
+            tags: [{pt: "Landing page", en: "Landing page"}, "Vercel", "Tailwind"],
             year: "2025"
         },
         {
@@ -184,7 +184,7 @@ export const CV_DATA = {
             },
             url: "https://webdesigndescomplicado.jrmessias.com.br/",
             image: "/assets/lp-webdesign-descomplicado.png",
-            tags: ["Education", "Front-end", "UX"],
+            tags: [{pt: "Educação", en: "Education"}, "Front-end", "UX"],
             year: "2025"
         },
     ],
