@@ -44,7 +44,7 @@ export default function Header({ lang, setLang, dark, setDark }) {
     ['experience', t('experience')],
     ['education', t('education')],
     ['projects', t('projects')],
-    ['courses', t('courses')],
+    // ['courses', t('courses')],
     ['events', t('events')],
     ['contact', t('contact')],
   ];
