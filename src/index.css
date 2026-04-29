@@ -179,6 +179,14 @@ h1, h2, h3 {
         font-size: 11pt !important;
     }
 
+    /* Ensure colored spans inside headings keep the heading size when printing
+       (e.g. the last name highlighted in the hero). */
+    section#top h1 span,
+    section#top h2 span,
+    section#top h3 span {
+        font-size: inherit !important;
+    }
+
     p, li, a, span, div {
         font-size: 10.5pt;
     }
