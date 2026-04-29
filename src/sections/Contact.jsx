@@ -42,9 +42,7 @@ function Modal({ isOpen, onClose, lang }) {
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
       <div className="relative w-full max-w-md bg-white dark:bg-neutral-900 rounded-2xl p-6 shadow-2xl" onClick={(e) => e.stopPropagation()}>
         <button onClick={onClose} className="absolute top-4 right-4 w-8 h-8 rounded-full grid place-items-center text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M18 6L6 18M6 6l12 12" />
-          </svg>
+          <Icon.close width="18" height="18" />
         </button>
         <h3 className="text-xl font-medium text-neutral-900 dark:text-neutral-100 mb-6">{COPY.nav.contact[lang]}</h3>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -110,27 +108,31 @@ export default function Contact({ lang }) {
                   </span>
                 </a>
               ) : (
-                <button onClick={it.action} data-print-value={it.value}
-                  className="contact-card group flex items-center justify-between gap-4 p-5 rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-white/2 hover:border-(--accent)/50 hover:-translate-y-0.5 transition-all w-full">
-                  <div className="flex items-center gap-4 min-w-0">
-                    <span className="w-10 h-10 rounded-full grid place-items-center bg-(--accent)/10 text-(--accent) print-icon">
-                      <it.icon width="18" height="18" />
+                  <button onClick={it.action} data-print-value={it.value}
+                          className="contact-card group flex items-center justify-between gap-4 p-5 rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-white/2 hover:border-(--accent)/50 hover:-translate-y-0.5 transition-all w-full">
+                    <div className="flex items-center gap-4 min-w-0">
+                    <span
+                        className="w-10 h-10 rounded-full grid place-items-center bg-(--accent)/10 text-(--accent) print-icon">
+                      <it.icon width="18" height="18"/>
                     </span>
-                    <div className="min-w-0">
-                      <div className="contact-label text-[11px] font-mono uppercase tracking-[0.14em] text-neutral-500 dark:text-neutral-400 text-left">{it.label}</div>
-                      <div className="contact-value text-sm font-medium text-neutral-900 dark:text-neutral-100 truncate">{it.value}</div>
+                      <div className="min-w-0">
+                        <div
+                            className="contact-label text-[11px] font-mono uppercase tracking-[0.14em] text-neutral-500 dark:text-neutral-400 text-left">{it.label}</div>
+                        <div
+                            className="contact-value text-sm font-medium text-neutral-900 dark:text-neutral-100 truncate">{it.value}</div>
+                      </div>
                     </div>
-                  </div>
-                  <span className="shrink-0 w-9 h-9 rounded-full border border-black/10 dark:border-white/10 grid place-items-center text-neutral-500 group-hover:bg-(--accent) group-hover:border-(--accent) group-hover:text-white transition-all">
-                    <Icon.arrow width="14" height="14" />
+                    <span
+                        className="shrink-0 w-9 h-9 rounded-full border border-black/10 dark:border-white/10 grid place-items-center text-neutral-500 group-hover:bg-(--accent) group-hover:border-(--accent) group-hover:text-white transition-all">
+                    <Icon.arrow width="14" height="14"/>
                   </span>
-                </button>
+                  </button>
               )}
             </Reveal>
           ))}
         </div>
       </Section>
-      <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} lang={lang} />
+      <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} lang={lang}/>
     </>
   );
 }

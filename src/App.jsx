@@ -7,7 +7,6 @@ import Experience from './sections/Experience.jsx';
 import Education from './sections/Education.jsx';
 import Projects from './sections/Projects.jsx';
 import Events from './sections/Events.jsx';
-import Courses from './sections/Courses.jsx';
 import Contact from './sections/Contact.jsx';
 import Footer from './components/Footer.jsx';
 

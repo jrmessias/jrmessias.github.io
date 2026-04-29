@@ -64,15 +64,48 @@ export const CV_DATA = {
             tags: ["Front-end", "Back-end", "SEO"]
         },
         {
+            company: "Hospital Regional Terezinha Gaio Basso / Instituto Santé",
+            place: "São Miguel do Oeste — SC",
+            period: {pt: "2017", en: "2017"},
+            title: {pt: "Analista de TI", en: "TI Analyst"},
+            description: {
+                pt: "Suporte técnico a hardware e software. Organização e padronização de atividades internas. Análises de melhorias para infra-estrutura. Análise, organização e encaminhamentos de melhorias aos sistemas de gestão. Otimização e redução de gastos do setor.",
+                en: "Technical support for hardware and software. Organization and standardization of internal activities. Analysis of infrastructure improvements. Analysis, organization, and implementation of improvements to management systems. Optimization and reduction of departmental expenses."
+            },
+            tags: ["Suporte técnico", "Liderança"]
+        },
+        {
             company: "DB'links Sistemas",
             place: "São Miguel do Oeste — SC",
             period: {pt: "2011 — 2017", en: "2011 — 2017"},
             title: {pt: "Full-Stack Developer", en: "Full-Stack Developer"},
             description: {
-                pt: "Análise de requisitos, desenvolvimento de sites/sistemas personalizados, apps Android/iOS com tecnologias web, e-commerce integrado com ERP, templates WordPress, liderança de equipe e treinamentos internos.",
-                en: "Requirements analysis, custom websites/systems, Android/iOS apps built with web tech, ERP-integrated e-commerce, WordPress templates, team leadership and internal training."
+                pt: "Análise de requisitos. Desenvolvimento de sites/sistemas personalizados e internos. Desenvolvimento de aplicativo para Android e iOS utilizando linguagens web. Padronização de documentações e processos internos. Implantação e padronização de sistema de administração para sites/sistemas. Treinamentos internos. Desenvolvimento de comércio eletrônico para supermercados integrado com ERP. Desenvolvimento de template e personalização de Wordpress. Análise de dados. Atendimento ao cliente. Liderança de equipe.",
+                en: "Requirements analysis. Development of custom and internal websites/systems. Development of Android and iOS applications using web languages. Standardization of internal documentation and processes. Implementation and standardization of administration systems for websites/systems. Internal training. Development of e-commerce for supermarkets integrated with ERP. WordPress template development and customization. Data analysis. Customer service. Team leadership."
             },
             tags: ["Full-stack", "WordPress", "E-commerce", "Liderança"]
+        },
+        {
+            company: "SENAC",
+            place: "São Miguel do Oeste — SC",
+            period: {pt: "2016 — 2017", en: "2016 — 2017"},
+            title: {pt: "Professor", en: "Instructor"},
+            description: {
+                pt: "Orientações em aulas no segmento de desenvolvimento web e tecnologias. Orientações de trabalho de conclusão de curso. Ensino de HTML, CSS, JS, PHP, Animação web, CMS e POO.",
+                en: "Guidance in classes in the web development and technology segment. Guidance for final course projects. Teaching HTML, CSS, JS, PHP, web animation, CMS, and OOP."
+            },
+            tags: ["SQL", "Web", "Teaching", "HTML", "CSS", "JS"]
+        },
+        {
+            company: "SENAI",
+            place: "São Miguel do Oeste — SC",
+            period: {pt: "2015", en: "2015"},
+            title: {pt: "Professor", en: "Instructor"},
+            description: {
+                pt: "Orientações em aulas no segmento de desenvolvimento web e tecnologias. Orientações de trabalho de conclusão de curso. Ensino de HTML, CSS, JS, PHP, POO e frameworks web.",
+                en: "Guidance in classes in the web development and technology segment. Guidance for final course projects. Teaching HTML, CSS, JS, PHP, OOP, and web frameworks."
+            },
+            tags: ["HTML", "CSS", "Teaching", "PHP", "CSS", "JS"]
         },
     ],
     education: [

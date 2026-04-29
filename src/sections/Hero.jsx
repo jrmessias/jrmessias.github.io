@@ -6,7 +6,7 @@ export default function Hero({ lang }) {
   const d = CV_DATA;
   const c = COPY.hero;
   return (
-    <section id="top" className="relative pt-32 md:pt-40 pb-20 md:pb-28 overflow-hidden">
+    <section id="top" className="relative pt-32 md:pt-32 pb-20 md:pb-28 overflow-hidden">
       <div className="absolute inset-0 -z-10 pointer-events-none opacity-[0.35] dark:opacity-[0.18]"
         style={{
           backgroundImage: 'linear-gradient(to right, rgba(0,0,0,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.06) 1px, transparent 1px)',
@@ -46,13 +46,18 @@ export default function Hero({ lang }) {
             </Reveal>
             <Reveal delay={300}>
               <div className="mt-10 flex flex-wrap gap-3">
-                <a href="#contact" className="group inline-flex items-center gap-2 h-11 px-5 rounded-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-sm font-medium hover:bg-(--accent) dark:hover:bg-(--accent) dark:hover:text-white transition-colors">
+                <a href="#contact"
+                   className="group inline-flex items-center gap-2 h-11 px-5 rounded-full bg-(--accent) dark:bg-(--accent) text-white dark:text-neutral-900 text-sm font-medium hover:bg-(--accent)/80 hover:text-black dark:hover:bg-(--accent)/80 dark:hover:text-white transition-colors">
                   {c.cta_contact[lang]}
-                  <Icon.arrow width="15" height="15" className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <Icon.arrow width="15" height="15" className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"/>
                 </a>
-                <button onClick={() => window.print()} className="cursor-pointer inline-flex items-center gap-2 h-11 px-5 rounded-full border border-black/10 dark:border-white/15 text-neutral-800 dark:text-neutral-200 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
-                  <Icon.download width="15" height="15" />
-                  {c.cta_cv[lang]}
+                <button onClick={() => window.print()}
+                    className="cursor-pointer inline-flex items-center gap-2 h-11 rounded-full text-neutral-800 dark:text-neutral-200 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/5 transition-colors bg-conic/[from_var(--border-angle)] from-white to-white dark:from-black via-emerald-400 dark:to-black animate-rotate-border p-[1px]"
+                >
+                  <div className="inline-flex items-center gap-2 h-10 px-5 w-full rounded-full bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 py-[1px]">
+                    <Icon.download width="15" height="15"/>
+                    {c.cta_cv[lang]}
+                  </div>
                 </button>
               </div>
             </Reveal>
@@ -69,11 +74,11 @@ export default function Hero({ lang }) {
           </div>
           <Reveal delay={240}>
             <div className="relative hidden md:block">
-              <div className="relative w-64 h-64 rounded-full overflow-hidden ring-1 ring-black/10 dark:ring-white/10">
+              <div className="relative w-64 h-64 rounded-full overflow-hidden">
                 <img src="/assets/foto.png" alt={d.identity.name} className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-3 -right-3 w-16 h-16 rounded-full bg-(--accent) text-white grid place-items-center shadow-lg">
-                {/*<Icon.arrow width="22" height="22" />*/}
+                <Icon.code width="22" height="22" />
               </div>
             </div>
           </Reveal>

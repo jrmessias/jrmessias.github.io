@@ -2,7 +2,7 @@ import Reveal from './Reveal.jsx';
 
 export default function Section({ id, eyebrow, title, children, className = '' }) {
   return (
-    <section id={id} className={`scroll-mt-24 py-24 md:py-32 ${className}`}>
+    <section id={id} className={`scroll-mt-24 py-24 md:py-24 ${className}`}>
       <div className="max-w-6xl mx-auto px-6 md:px-10">
         <Reveal>
           <div className="flex items-center gap-3 text-[11px] font-mono uppercase tracking-[0.14em] text-(--accent) mb-4">

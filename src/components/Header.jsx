@@ -68,9 +68,7 @@ export default function Header({ lang, setLang, dark, setDark }) {
           <ThemeToggle dark={dark} setDark={setDark} />
           <button className="md:hidden ml-1 w-9 h-9 rounded-full grid place-items-center border border-black/10 dark:border-white/10 text-neutral-700 dark:text-neutral-300"
             onClick={() => setOpenMobile((v) => !v)} aria-label="Menu">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.7">
-              {openMobile ? <path d="M6 6l12 12M6 18L18 6" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
-            </svg>
+            {openMobile ? <Icon.close width="18" height="18" /> : <Icon.menu width="18" height="18" />}
           </button>
         </div>
       </div>
