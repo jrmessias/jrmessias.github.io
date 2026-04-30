@@ -187,6 +187,17 @@ export const CV_DATA = {
             tags: [{pt: "Educação", en: "Education"}, "Front-end", "UX"],
             year: "2025"
         },
+        {
+            name: "Gerador de Avatar com Letras",
+            description: {
+                pt: "Gerador de avatar com letras para uso em sites e aplicativos, download em PNG, SVG e área de transferência.",
+                en: "Avatar generator with text for use on websites and apps, download in PNG, SVG and clipboard formats."
+            },
+            url: "https://letter-avatar-generator.vercel.app/",
+            image: "/assets/avatar-letter-generator.png",
+            tags: ["Avatar", {pt: "Gerador on-line", en: "On-line generator"}, "UI", "Vercel"],
+            year: "2025"
+        },
     ],
     events: [
         {
