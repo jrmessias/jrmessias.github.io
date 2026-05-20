@@ -1,4 +1,7 @@
 // Bilingual CV data
+const diaDoAno = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 1)) / 86400000) + 1;
+const qtdSextas = [...Array(365 + (new Date().getFullYear()%4===0 && (new Date().getFullYear()%100!==0 || new Date().getFullYear()%400===0)))].filter((_,i)=>new Date(new Date().getFullYear(),0,i+1).getDay()===5).length;
+
 export const CV_DATA = {
     identity: {
         name: "Israel Messias Júnior",
@@ -16,9 +19,13 @@ export const CV_DATA = {
         en: "I'm a systems developer and technology instructor. I work as a Systems Analyst at iopoint Tecnologia, building SaaS solutions with PHP, Laravel and Angular, as well as mobile applications with Flutter. I taught at SENAC in São Miguel do Oeste, Santa Catarina. I hold a degree in Information Systems and several postgraduate specializations across development, UX/UI, management and innovation. I'm an active participant in events like Techstars Startup Weekends, hackathons and innovation meetups.",
     },
     stats: [
-        {value: "15+", label: {pt: "anos de experiência", en: "years of experience"}},
-        {value: "8", label: {pt: "pós-graduações", en: "postgraduate degrees"}},
-        {value: "20+", label: {pt: "projetos entregues", en: "projects delivered"}},
+        // {value: 2500+diaDoAno+"+", label: {pt: "anos de experiência", en: "years of experience"}},
+        // {value: "8", label: {pt: "pós-graduações", en: "postgraduate degrees"}},
+        // {value: "20+", label: {pt: "projetos entregues", en: "projects delivered"}},
+        {value: 2500+diaDoAno+"+", label: {pt: "cuias de chimarrão", en: "chimarrão gourds"}},
+        {value: 10000+diaDoAno+"+", label: {pt: "xícaras de café", en: "coffe cups"}},
+        {value: (qtdSextas * 6) + diaDoAno+"+", label: {pt: "latas de energético", en: "energy drink"}},
+        {value: "30+", label: {pt: "projetos entregues", en: "projects delivered"}},
     ],
     skills: [
         {group: {pt: "Back-end", en: "Back-end"}, items: ["PHP", "Laravel", "SQL", "MySQL", "API's"]},
