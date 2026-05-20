@@ -1,6 +1,7 @@
 import { CV_DATA, COPY } from '../data.js';
 import Reveal from '../components/Reveal.jsx';
 import { Icon } from '../components/Icon.jsx';
+import SlotCounter from 'react-slot-counter';
 
 export default function Hero({ lang }) {
   const d = CV_DATA;
@@ -65,7 +66,11 @@ export default function Hero({ lang }) {
               <div className="mt-16 grid grid-cols-3 gap-8 max-w-md border-t border-black/10 dark:border-white/10 pt-6">
                 {d.stats.map((s) => (
                   <div key={s.value}>
-                    <div className="text-2xl md:text-3xl font-medium tracking-tight text-neutral-900 dark:text-neutral-50">{s.value}</div>
+                    <div className="text-2xl md:text-3xl font-medium tracking-tight text-neutral-900 dark:text-neutral-50">
+                      {/*<NumberFlow value={s.value} suffix="+"/>*/}
+                      <SlotCounter value={s.value} />
+
+                    </div>
                     <div className="text-[11px] uppercase tracking-[0.12em] text-neutral-500 dark:text-neutral-400 mt-1">{s.label[lang]}</div>
                   </div>
                 ))}
