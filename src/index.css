@@ -187,7 +187,7 @@ h1, h2, h3 {
         font-size: inherit !important;
     }
 
-    p, li, a, span, div {
+    p, li, a, span {
         font-size: 10.5pt;
     }
 
