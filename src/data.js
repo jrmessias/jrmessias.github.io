@@ -25,7 +25,7 @@ export const CV_DATA = {
         {value: 2500+diaDoAno+"+", label: {pt: "cuias de chimarrão", en: "chimarrão gourds"}},
         {value: 10000+diaDoAno+"+", label: {pt: "xícaras de café", en: "coffe cups"}},
         {value: (qtdSextas * 6) + diaDoAno+"+", label: {pt: "latas de energético", en: "energy drink"}},
-        {value: "30+", label: {pt: "projetos entregues", en: "projects delivered"}},
+        // {value: "30+", label: {pt: "projetos entregues", en: "projects delivered"}},
     ],
     skills: [
         {group: {pt: "Back-end", en: "Back-end"}, items: ["PHP", "Laravel", "SQL", "MySQL", "API's"]},
