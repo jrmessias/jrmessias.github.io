@@ -83,7 +83,7 @@ export default function Hero({ lang }) {
                 <img src="/assets/foto.png" alt={d.identity.name} className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-3 -right-3 w-16 h-16 rounded-full bg-(--accent) text-white grid place-items-center shadow-lg">
-                <Icon.code width="22" height="22" />
+                <Icon.m width="44" height="44" />
               </div>
             </div>
           </Reveal>

@@ -52,22 +52,30 @@ const Dot = (p) => (
   <svg viewBox="0 0 8 8" {...p}><circle cx="4" cy="4" r="3" fill="currentColor" /></svg>
 );
 
+const M = (p) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 241" {...p}>
+        <path className="fill-black dark:fill-white" d="m42.72 28.07-.11 53.09 15.44 12.82.06-29.82 137.6 122 .09-80.96-15.05 13.73-.99 29.89-137-120.7z"/>
+        <path className="fill-black dark:fill-white" d="m195.4 28.18-63.31 56.13 12.76 10.8 35.44-31.63-.01 30.49 15.26-14.35zM42.99 105.2v67.91l112.4-.03-20.24-15.05-76.95-.71-.06-39.76-15.2-12.36z"/>
+    </svg>
+);
+
 export const Icon = {
-  sun: lucide(Sun),
-  moon: lucide(Moon),
-  arrow: lucide(ArrowUpRight),
-  down: lucide(ArrowDown),
-  whatsapp: WhatsApp,
-  github: Github,
-  instagram: Instagram,
-  download: lucide(Download),
-  dot: Dot,
-  email: lucide(Mail),
-  figma: Figma,
-  lattes: Lattes,
-  x: XIcon,
-  coffee: lucide(Coffee),
-  menu: lucide(Menu),
-  close: lucide(X),
-  code: lucide(Code),
+    arrow: lucide(ArrowUpRight),
+    close: lucide(X),
+    code: lucide(Code),
+    coffee: lucide(Coffee),
+    dot: Dot,
+    down: lucide(ArrowDown),
+    download: lucide(Download),
+    email: lucide(Mail),
+    figma: Figma,
+    github: Github,
+    instagram: Instagram,
+    lattes: Lattes,
+    m: M,
+    menu: lucide(Menu),
+    moon: lucide(Moon),
+    sun: lucide(Sun),
+    whatsapp: WhatsApp,
+    x: XIcon,
 };
