@@ -55,7 +55,10 @@ export default function Header({ lang, setLang, dark, setDark }) {
     }`}>
       <div className="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2 group">
-          <span className="relative w-7 h-7 rounded-full bg-(--accent) flex items-center justify-center text-white text-[11px] font-semibold tracking-tight">IMJ</span>
+          {/*<span className="relative w-7 h-7 rounded-full bg-(--accent) flex items-center justify-center text-white text-[11px] font-semibold tracking-tight">IMJ</span>*/}
+          <div className="-bottom-3 -right-3 w-7 h-7 bg-(--accent) text-white place-items-center self-center shadow-lg box-squircle squircle">
+            <Icon.m width="40" height="40" class="mt-1" />
+          </div>
           <span className="text-sm font-medium tracking-tight text-neutral-900 dark:text-neutral-100 hidden sm:inline">Israel Messias <span className="text-(--accent)">Jr.</span></span>
         </a>
         <nav className="hidden md:flex items-center gap-1">

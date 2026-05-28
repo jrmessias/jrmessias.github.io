@@ -68,6 +68,10 @@ h1, h2, h3 {
     radial-gradient(50% 40% at 0% 30%, color-mix(in oklab, var(--accent) 14%, transparent), transparent 60%);
 }
 
+.font-variant-numeric{
+    font-variant-numeric: tabular-nums;
+}
+
 #root {
     position: relative;
     z-index: 1;
@@ -364,4 +368,30 @@ h1, h2, h3 {
             --border-angle: 360deg;
         }
     }
+}
+
+/* reference: https://gist.github.com/pouyakary/136fafc75a14abd867e0100856add5a0 */
+
+.squircle {
+    --squircle-amount: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    clip-path: shape(
+            from 0 var(--squircle-amount),
+            curve to var(--squircle-amount) 0 with 0 0 / 0 0,
+            hline to calc(100% - var(--squircle-amount)),
+            curve to 100% var(--squircle-amount) with 100% 0 / 100% 0,
+            vline to calc(100% - var(--squircle-amount)),
+            curve to calc(100% - var(--squircle-amount)) 100% with 100% 100% / 100% 100%,
+            hline to var(--squircle-amount),
+            curve to 0 calc(100% - var(--squircle-amount)) with 0 100% / 0 100%,
+            close
+    );
+}
+
+.box-squircle {
+    background: var(--color-accent);
+    aspect-ratio: 1;
 }

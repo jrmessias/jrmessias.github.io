@@ -6,12 +6,12 @@ export const CV_DATA = {
     identity: {
         name: "Israel Messias Júnior",
         initials: "IM",
-        role: {pt: "Analista de Sistemas", en: "Systems Analyst"},
+        role: {pt: "Tech Manager", en: "Tech Manager"},
         company: "iopoint tecnologia",
         location: {pt: "São Miguel do Oeste, SC — Brasil", en: "São Miguel do Oeste, SC — Brazil"},
         tagline: {
-            pt: "Desenvolvedor full-stack.",
-            en: "Full-stack developer.",
+            pt: "Desenvolvedor Full Stack / Tech Manager",
+            en: "Full Stack Developer / Tech Manager",
         },
     },
     about: {
@@ -41,10 +41,10 @@ export const CV_DATA = {
             company: "iopoint Tecnologia",
             place: "São Miguel do Oeste — SC",
             period: {pt: "2020 — Atual", en: "2020 — Present"},
-            title: {pt: "Analista de Sistemas", en: "Systems Analyst"},
+            title: {pt: "Tech Manager", en: "Tech Manager"},
             description: {
-                pt: "Desenvolvimento de sistema SaaS, back-end, front-end, API e aplicativo para Android e iOS.",
-                en: "SaaS system development — back-end, front-end, APIs and Android/iOS apps."
+                pt: "Desenvolvimento de sistema SaaS, back-end, front-end, API e aplicativo para Android e iOS. Manutenção em código legado. Integração com sistemas de terceiros via API e arquivos. Organização do setor de TI. Análise de dados. Análise de requisitos. Atendimento ao cliente. Lideraça de equipe. Processos internos. Padronização de documentação e processos internos. Melhoria contínua nos sistemas. Desenvovimento de sistemas internos.",
+                en: "Development of SaaS systems, including back-end, front-end, API, and Android and iOS applications. Maintenance of legacy code. Integration with third-party systems via API and files. IT department organization. Data analysis. Requirements analysis. Customer service. Team leadership. Internal processes. Standardization of documentation and internal processes. Continuous improvement of systems. Development of internal systems."
             },
             tags: ["PHP", "JS", "TS", "CSS", "HTML", "Dart", "Laravel", "Angular", "Flutter"]
         },
@@ -208,6 +208,13 @@ export const CV_DATA = {
     ],
     events: [
         {
+            title: {pt: "PHP Velho Oeste", en: "PHP Velho Oeste"},
+            role: {pt: "Participante", en: "Participant"},
+            year: "2023-2026",
+            place: "Chapecó — SC",
+            url: "https://phpvelhoeste.com.br/"
+        },
+        {
             title: {pt: "Hackathon Innova Saúde", en: "Innova Saúde Hackathon"},
             role: {pt: "Mentor", en: "Mentor"},
             year: "2025",
@@ -237,7 +244,7 @@ export const CV_DATA = {
         },
         {
             title: {pt: "Techstars Startup Weekend", en: "Techstars Startup Weekend"},
-            role: {pt: "Vencedor 🏆", en: "Winner 🏆"},
+            role: {pt: "Participante 🏆", en: "Participant 🏆"},
             year: "2023",
             place: "São Miguel do Oeste — SC",
             url: "#"

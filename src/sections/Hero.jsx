@@ -66,7 +66,7 @@ export default function Hero({ lang }) {
               <div className="mt-16 grid grid-cols-3 gap-8 print:gap-4 max-w-md border-t border-black/10 dark:border-white/10 pt-6">
                 {d.stats.map((s) => (
                   <div key={s.value}>
-                    <div className="text-2xl md:text-3xl print:text-lg font-medium tracking-tight text-neutral-900 dark:text-neutral-50">
+                    <div className="text-2xl font-variant-numeric md:text-3xl print:text-lg font-medium tracking-tight text-neutral-900 dark:text-neutral-50">
                       <SlotCounter value={s.value} />
                     </div>
                     <div className="text-[11px] print:text-[9px] uppercase tracking-[0.12em] text-neutral-500 dark:text-neutral-400 mt-1 print:-mt-4">
@@ -82,8 +82,8 @@ export default function Hero({ lang }) {
               <div className="relative w-64 h-64 rounded-full overflow-hidden">
                 <img src="/assets/foto.png" alt={d.identity.name} className="w-full h-full object-cover" />
               </div>
-              <div className="absolute -bottom-3 -right-3 w-16 h-16 rounded-full bg-(--accent) text-white grid place-items-center shadow-lg">
-                <Icon.m width="44" height="44" />
+              <div className="absolute -bottom-3 -right-3 w-16 h-16 bg-(--accent) text-white place-items-center self-center shadow-lg box-squircle squircle">
+                <Icon.m width="50" height="50" class="mt-1" />
               </div>
             </div>
           </Reveal>
