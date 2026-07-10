@@ -43,8 +43,8 @@ export const CV_DATA = {
             period: {pt: "2020 — Atual", en: "2020 — Present"},
             title: {pt: "Tech Manager", en: "Tech Manager"},
             description: {
-                pt: "Desenvolvimento de sistema SaaS, back-end, front-end, API e aplicativo para Android e iOS. Manutenção em código legado. Integração com sistemas de terceiros via API e arquivos. Organização do setor de TI. Análise de dados. Análise de requisitos. Atendimento ao cliente. Lideraça de equipe. Processos internos. Padronização de documentação e processos internos. Melhoria contínua nos sistemas. Desenvovimento de sistemas internos.",
-                en: "Development of SaaS systems, including back-end, front-end, API, and Android and iOS applications. Maintenance of legacy code. Integration with third-party systems via API and files. IT department organization. Data analysis. Requirements analysis. Customer service. Team leadership. Internal processes. Standardization of documentation and internal processes. Continuous improvement of systems. Development of internal systems."
+                pt: "Desenvolvimento de sistema SaaS, back-end, front-end, API e aplicativo para Android e iOS. Manutenção em código legado. Integração com sistemas de terceiros via API e arquivos. Organização do setor de TI. Análise de dados. Análise de requisitos. Atendimento ao cliente. Lideraça de equipe. Processos internos. Padronização de documentação e processos internos. Melhoria contínua nos sistemas. Desenvovimento de sistemas internos. Responsável Técnico.",
+                en: "Development of SaaS system, back-end, front-end, API, and Android and iOS applications. Legacy code maintenance. Integration with third-party systems via API and files. IT department organization. Data analysis. Requirements analysis. Customer service. Team leadership. Internal processes. Standardization of documentation and internal processes. Continuous improvement of systems. Development of internal systems. Technical Lead."
             },
             tags: ["PHP", "JS", "TS", "CSS", "HTML", "Dart", "Laravel", "Angular", "Flutter"]
         },
@@ -120,13 +120,13 @@ export const CV_DATA = {
             title: {pt: "Desenvolvimento Full-Stack", en: "Full-Stack Development"},
             degree: {pt: "Pós-Graduação Lato Sensu", en: "Postgraduate (Lato Sensu)"},
             inst: "IF Sudeste MG",
-            year: "—"
+            year: "2025 —"
         },
         {
             title: {pt: "Gestão, Estratégia e Inovação", en: "Management, Strategy & Innovation"},
             degree: {pt: "Pós-Graduação Lato Sensu", en: "Postgraduate (Lato Sensu)"},
             inst: "IF Farroupilha",
-            year: "—"
+            year: "2025 - 2026"
         },
         {
             title: {pt: "User Experience (UX) e User Interface (UI)", en: "User Experience (UX) & User Interface (UI)"},
@@ -137,8 +137,8 @@ export const CV_DATA = {
         {
             title: {pt: "Informática na Educação", en: "Computing in Education"},
             degree: {pt: "Pós-Graduação Lato Sensu", en: "Postgraduate (Lato Sensu)"},
-            inst: "IFMA",
-            year: "2024"
+            inst: "IF Maranhão",
+            year: "2023 - 2024"
         },
         {
             title: {pt: "Desenvolvimento de Apps Móveis", en: "Mobile App Development"},
