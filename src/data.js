@@ -179,7 +179,7 @@ export const CV_DATA = {
                 en: "Landing page for a healthy-recipe ebook launch, conversion-focused."
             },
             url: "https://lp-ebook-receitas-saudaveis.vercel.app/",
-            image: "/assets/lp-receitas-saudaveis.png",
+            image: "/assets/lp-receitas-saudaveis.webp",
             tags: [{pt: "Landing page", en: "Landing page"}, "Vercel", "Tailwind"],
             year: "2025"
         },
@@ -190,7 +190,7 @@ export const CV_DATA = {
                 en: "Educational project on web-design fundamentals and front-end development."
             },
             url: "https://webdesigndescomplicado.jrmessias.com.br/",
-            image: "/assets/lp-webdesign-descomplicado.png",
+            image: "/assets/lp-webdesign-descomplicado.webp",
             tags: [{pt: "Educação", en: "Education"}, "Front-end", "UX"],
             year: "2025"
         },
@@ -201,7 +201,7 @@ export const CV_DATA = {
                 en: "Avatar generator with text for use on websites and apps, download in PNG, SVG and clipboard formats."
             },
             url: "https://letter-avatar-generator.vercel.app/",
-            image: "/assets/avatar-letter-generator.png",
+            image: "/assets/avatar-letter-generator.webp",
             tags: ["Avatar", {pt: "Gerador on-line", en: "On-line generator"}, "UI", "Vercel"],
             year: "2025"
         },
@@ -519,8 +519,21 @@ export const COPY = {
     hero: {
         available: {pt: "Disponível para projetos", en: "Available for projects"},
         cta_contact: {pt: "Entrar em contato", en: "Get in touch"},
-        cta_cv: {pt: "Baixar currículo", en: "Download CV"},
+        // The button calls window.print(), so it must not promise a download.
+        cta_cv: {pt: "Salvar currículo em PDF", en: "Save CV as PDF"},
         scroll: {pt: "Role para explorar", en: "Scroll to explore"},
+    },
+    a11y: {
+        skip: {pt: "Pular para o conteúdo", en: "Skip to content"},
+        theme_to_dark: {pt: "Ativar tema escuro", en: "Switch to dark theme"},
+        theme_to_light: {pt: "Ativar tema claro", en: "Switch to light theme"},
+        menu_open: {pt: "Abrir menu", en: "Open menu"},
+        menu_close: {pt: "Fechar menu", en: "Close menu"},
+        lang_group: {pt: "Idioma do site", en: "Site language"},
+        lang_pt: {pt: "Português", en: "Portuguese"},
+        lang_en: {pt: "Inglês", en: "English"},
+        close: {pt: "Fechar", en: "Close"},
+        current_section: {pt: "seção atual", en: "current section"},
     },
     sections: {
         about: {pt: "Sobre", en: "About"},
@@ -554,7 +567,11 @@ export const COPY = {
             send: {pt: "Enviar", en: "Send"},
             sending: {pt: "Enviando...", en: "Sending..."},
             sent: {pt: "Enviado!", en: "Sent!"},
-            error: {pt: "Erro ao enviar", en: "Failed to send"},
+            sent_msg: {
+                pt: "Mensagem enviada. Respondo em breve!",
+                en: "Message sent. I'll get back to you soon!",
+            },
+            error: {pt: "Erro ao enviar. Tente novamente.", en: "Failed to send. Please try again."},
         },
     },
     footer: {

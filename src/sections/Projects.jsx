@@ -13,13 +13,14 @@ export default function Projects({ lang }) {
             <a href={p.url} target="_blank" rel="noreferrer"
               className="group relative flex flex-col overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-white/2 hover:border-(--accent)/50 transition-all hover:-translate-y-0.5 h-full">
                <div className="relative aspect-16/10 overflow-hidden bg-neutral-100 dark:bg-neutral-900">
-                 <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
+                 <img src={p.image} alt={p.name} width="1024" height="364" loading="lazy" decoding="async"
+                   className="w-full h-full object-cover" />
                  <div className="absolute inset-0" style={{ backgroundImage: 'repeating-linear-gradient(135deg, rgba(0,0,0,0.04) 0 1px, transparent 1px 10px)' }} />
                </div>
               <div className="p-6 flex-1 flex flex-col">
                 <div className="flex items-start justify-between gap-4">
                   <h3 className="text-lg font-medium tracking-tight text-neutral-900 dark:text-neutral-100">{p.name}</h3>
-                  <span className="shrink-0 w-9 h-9 rounded-full border border-black/10 dark:border-white/10 grid place-items-center text-neutral-500 group-hover:bg-(--accent) group-hover:border-(--accent) group-hover:text-white transition-all">
+                  <span aria-hidden="true" className="shrink-0 w-9 h-9 rounded-full border border-black/10 dark:border-white/10 grid place-items-center text-neutral-500 group-hover:bg-(--accent-ink) group-hover:border-(--accent-ink) group-hover:text-(--accent-fg) transition-all">
                     <Icon.arrow width="14" height="14" />
                   </span>
                 </div>

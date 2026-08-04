@@ -11,7 +11,7 @@ export default function Education({ lang }) {
             <div className="group flex items-start gap-5 py-5 border-b border-black/5 dark:border-white/5">
               <div className="shrink-0 w-14 text-[11px] font-mono text-neutral-500 dark:text-neutral-400 tabular-nums pt-1">{e.year}</div>
               <div className="min-w-0 flex-1">
-                <h3 className="text-[15px] font-medium text-neutral-900 dark:text-neutral-100 leading-snug group-hover:text-(--accent) transition-colors">{e.title[lang]}</h3>
+                <h3 className="text-[15px] font-medium text-neutral-900 dark:text-neutral-100 leading-snug group-hover:text-(--accent-ink) transition-colors">{e.title[lang]}</h3>
                 <div className="mt-1 text-[13px] text-neutral-500 dark:text-neutral-400">{e.degree[lang]} · {e.inst}</div>
               </div>
             </div>
