@@ -498,7 +498,7 @@ export const CV_DATA = {
     contact: {
         whatsapp: "https://wa.me/+55049988198409?text=Contato%20via%20site",
         github: "https://www.github.com/jrmessias",
-        instagram: "https://www.instagram.com/imj.dev",
+        instagram: "https://www.instagram.com/i.am.jrmessias",
         figma: "https://www.figma.com/@jrmessias",
         lattes: "http://lattes.cnpq.br/2703556361470739",
         email: "mailto:jrmessias@gmail.com",

@@ -78,7 +78,7 @@ export default function Contact({ lang }) {
     { key: 'github', label: 'GitHub', value: 'github.com/jrmessias', icon: Icon.github, url: CV_DATA.contact.github },
     { key: 'figma', label: 'Figma', value: 'figma.com/@jrmessias', icon: Icon.figma, url: CV_DATA.contact.figma },
     { key: 'lattes', label: 'Lattes', value: 'lattes.cnpq.br', icon: Icon.lattes, url: CV_DATA.contact.lattes },
-    { key: 'instagram', label: 'Instagram', value: '@imj.dev', icon: Icon.instagram, url: CV_DATA.contact.instagram },
+    { key: 'instagram', label: 'Instagram', value: '@i.am.jrmessias', icon: Icon.instagram, url: CV_DATA.contact.instagram },
     { key: 'email', label: 'Email', value: 'jrmessias@gmail.com', icon: Icon.email, action: () => setModalOpen(true) },
   ];
 
@@ -109,7 +109,7 @@ export default function Contact({ lang }) {
                 </a>
               ) : (
                   <button onClick={it.action} data-print-value={it.value}
-                          className="contact-card group flex items-center justify-between gap-4 p-5 rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-white/2 hover:border-(--accent)/50 hover:-translate-y-0.5 transition-all w-full">
+                          className="contact-card group flex items-center justify-between gap-4 p-5 rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-white/2 hover:border-(--accent)/50 hover:-translate-y-0.5 transition-all w-full cursor-pointer">
                     <div className="flex items-center gap-4 min-w-0">
                     <span
                         className="w-10 h-10 rounded-full grid place-items-center bg-(--accent)/10 text-(--accent) print-icon">
