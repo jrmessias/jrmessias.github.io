@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
+import { reduceMotion } from '../utils.js';
 
 export function useReveal() {
   const ref = useRef(null);
-  const [shown, setShown] = useState(false);
+  const [shown, setShown] = useState(reduceMotion);
   useEffect(() => {
     const el = ref.current;
     if (!el || shown) return;
@@ -22,7 +23,7 @@ export default function Reveal({ children, delay = 0, as: As = 'div', className 
     <As
       ref={ref}
       className={className}
-      style={{
+      style={reduceMotion ? undefined : {
         opacity: shown ? 1 : 0,
         transform: shown ? 'translateY(0)' : 'translateY(12px)',
         transition: `opacity .7s cubic-bezier(.22,.61,.36,1) ${delay}ms, transform .7s cubic-bezier(.22,.61,.36,1) ${delay}ms`,

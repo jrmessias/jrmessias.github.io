@@ -29,11 +29,19 @@
 
 :root {
     --accent: oklch(69.6% 0.17 162.48);
+    /* Accent for text and filled buttons: emerald-500 hits only 2.5:1 on the light
+       background. This darker step reaches 5.5:1 (WCAG AA). --accent stays for
+       decorative fills, borders and glows, where 3:1 is enough. */
+    --accent-ink: oklch(51.8% 0.13 162.5);
+    /* Readable foreground on top of --accent-ink. */
+    --accent-fg: #fff;
     --bg: #fafaf9;
     --fg: #0a0a0a;
 }
 
 .dark {
+    --accent-ink: var(--accent);
+    --accent-fg: #0a0a0a;
     --bg: #0a0a0a;
     --fg: #fafafa;
 }
@@ -41,6 +49,24 @@
 html {
     scroll-behavior: smooth;
     background: var(--bg);
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent-ink);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, ::before, ::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
 }
 
 body {
@@ -55,8 +81,8 @@ h1, h2, h3 {
 }
 
 ::selection {
-    background: var(--accent);
-    color: #fff;
+    background: var(--accent-ink);
+    color: var(--accent-fg);
 }
 
 .bg-gradient-decor {
@@ -70,6 +96,17 @@ h1, h2, h3 {
 
 .font-variant-numeric{
     font-variant-numeric: tabular-nums;
+}
+
+/* Native <dialog> gives us Esc-to-close, focus trapping and inert background
+   for free; only the backdrop needs styling. */
+dialog::backdrop {
+    background: rgb(0 0 0 / .6);
+    backdrop-filter: blur(4px);
+}
+
+html:has(dialog[open]) {
+    overflow: hidden;
 }
 
 #root {
@@ -226,7 +263,9 @@ h1, h2, h3 {
         gap: 6mm !important;
     }
 
-    a[href="#contact"], button {
+    /* The email card is a <button> (it opens the dialog), but its address still
+       has to show up on the printed CV. */
+    a[href="#contact"], button:not(.contact-card) {
         display: none !important;
     }
 
@@ -241,11 +280,11 @@ h1, h2, h3 {
         word-break: break-all;
     }
 
-    a.contact-card::after {
+    .contact-card::after {
         content: none !important;
     }
 
-    a.contact-card .contact-value {
+    .contact-card .contact-value {
         display: block !important;
         font-size: 10.5pt !important;
         font-weight: 500;
@@ -256,26 +295,28 @@ h1, h2, h3 {
         text-overflow: clip !important;
     }
 
-    a.contact-card .contact-label {
+    .contact-card .contact-label {
         display: block !important;
         font-size: 9pt !important;
         margin-bottom: 0.5mm;
         color: #555 !important;
     }
 
-    a.contact-card {
+    .contact-card {
         padding: 3mm !important;
         border: .4pt solid rgba(0, 0, 0, .15) !important;
         display: block !important;
+        width: 100% !important;
+        background: transparent !important;
     }
 
-    a.contact-card > div:first-child {
+    .contact-card > span:first-child {
         display: flex !important;
         align-items: center !important;
         gap: 2mm !important;
     }
 
-    a.contact-card > div:first-child > span:first-child {
+    .contact-card > span:first-child > span:first-child {
         width: 6mm !important;
         height: 6mm !important;
         border-radius: 50% !important;
@@ -284,7 +325,7 @@ h1, h2, h3 {
         place-items: center !important;
     }
 
-    a.contact-card > span:last-child {
+    .contact-card > span:last-child {
         display: none !important;
     }
 

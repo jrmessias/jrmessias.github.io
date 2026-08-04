@@ -12,15 +12,37 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="jrmessias" />
     <link rel="manifest" href="/assets/favicon/site.webmanifest"/>
-    <meta name="theme-color" content="#ffffff"/>
+    <meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)"/>
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"/>
     <meta name="description"
           content="Site e Portfólio de Israel Messias Júnior: Desenvolvedor Fullstack. Confira meus projetos, formação e experiências. Disponível para projetos">
     <meta name="keywords" content="Desenvolvedor Fullstack, Laravel, React, PHP, Rankio, Engenharia de Software">
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="Israel Messias Júnior">
+    <meta property="og:locale" content="pt_BR">
     <meta property="og:title" content="Israel Messias Júnior | Dev Fullstack">
+    <meta property="og:description"
+          content="Desenvolvedor Full Stack e Tech Manager. Projetos, formação e experiência. Disponível para novos projetos.">
     <meta property="og:url" content="https://www.jrmessias.com.br">
-    <meta property="og:image" content="/assets/favicon/foto.png">
+    <meta property="og:image" content="https://www.jrmessias.com.br/assets/foto.png">
+    <meta property="og:image:width" content="384">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="Foto de Israel Messias Júnior">
+    <meta name="twitter:card" content="summary">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
           rel="stylesheet"/>
+    <script>
+        // Applies the stored theme before first paint. Without this, React only
+        // adds .dark in an effect and dark-mode users get a white flash.
+        try {
+            var saved = localStorage.getItem('cv-dark');
+            var dark = saved != null ? saved === '1' : matchMedia('(prefers-color-scheme: dark)').matches;
+            if (dark) document.documentElement.classList.add('dark');
+            var lang = localStorage.getItem('cv-lang');
+            if (lang) document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+        } catch (e) {
+        }
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SMX0451JVM"></script>
     <script>

@@ -2,6 +2,7 @@ import { CV_DATA, COPY } from '../data.js';
 import Reveal from '../components/Reveal.jsx';
 import { Icon } from '../components/Icon.jsx';
 import SlotCounter from 'react-slot-counter';
+import { reduceMotion } from '../utils.js';
 
 export default function Hero({ lang }) {
   const d = CV_DATA;
@@ -19,7 +20,7 @@ export default function Hero({ lang }) {
         <div className="grid md:grid-cols-[1fr_auto] gap-10 md:gap-16 items-start">
           <div className="max-w-3xl">
             <Reveal>
-              <div className="inline-flex items-center gap-2 px-3 h-7 rounded-full border border-(--accent)/30 bg-(--accent)/10 text-(--accent) text-[11px] font-medium">
+              <div className="inline-flex items-center gap-2 px-3 h-7 rounded-full border border-(--accent)/30 bg-(--accent)/10 text-(--accent-ink) text-[11px] font-medium">
                 <span className="relative flex w-1.5 h-1.5">
                   <span className="absolute inset-0 rounded-full bg-(--accent) animate-ping opacity-60" />
                   <span className="relative w-1.5 h-1.5 rounded-full bg-(--accent)" />
@@ -30,7 +31,7 @@ export default function Hero({ lang }) {
             <Reveal delay={80}>
               <h1 className="mt-6 text-5xl md:text-7xl font-medium tracking-tight leading-[1.02] text-neutral-900 dark:text-neutral-50">
                 {d.identity.name.split(' ').slice(0, -1).join(' ')}{' '}
-                <span className="text-(--accent)">{d.identity.name.split(' ').slice(-1)[0]}</span>
+                <span className="text-(--accent-ink)">{d.identity.name.split(' ').slice(-1)[0]}</span>
               </h1>
             </Reveal>
             <Reveal delay={160}>
@@ -48,7 +49,7 @@ export default function Hero({ lang }) {
             <Reveal delay={300}>
               <div className="mt-10 flex flex-wrap gap-3">
                 <a href="#contact"
-                   className="group inline-flex items-center gap-2 h-11 px-5 rounded-full bg-(--accent) dark:bg-(--accent) text-white dark:text-neutral-900 text-sm font-medium hover:bg-(--accent)/80 hover:text-black dark:hover:bg-(--accent)/80 dark:hover:text-white transition-colors">
+                   className="group inline-flex items-center gap-2 h-11 px-5 rounded-full bg-(--accent-ink) text-(--accent-fg) text-sm font-medium hover:opacity-90 transition-opacity">
                   {c.cta_contact[lang]}
                   <Icon.arrow width="15" height="15" className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"/>
                 </a>
@@ -67,9 +68,9 @@ export default function Hero({ lang }) {
                 {d.stats.map((s) => (
                   <div key={s.value}>
                     <div className="text-2xl font-variant-numeric md:text-3xl print:text-lg font-medium tracking-tight text-neutral-900 dark:text-neutral-50">
-                      <SlotCounter value={s.value} />
+                      {reduceMotion ? s.value : <SlotCounter value={s.value} />}
                     </div>
-                    <div className="text-[11px] print:text-[9px] uppercase tracking-[0.12em] text-neutral-500 dark:text-neutral-400 mt-1 print:-mt-4">
+                    <div className="text-[11px] print:text-[9px] uppercase tracking-[0.12em] text-neutral-500 dark:text-neutral-400 mt-1">
                       {s.label[lang]}
                     </div>
                   </div>
@@ -80,7 +81,8 @@ export default function Hero({ lang }) {
           <Reveal delay={240}>
             <div className="relative hidden md:block">
               <div className="relative w-64 h-64 rounded-full overflow-hidden">
-                <img src="/assets/foto.png" alt={d.identity.name} className="w-full h-full object-cover" />
+                <img src="/assets/foto.webp" alt={d.identity.name} width="256" height="256"
+                  fetchPriority="high" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-3 -right-3 w-16 h-16 bg-(--accent) text-white place-items-center self-center shadow-lg box-squircle squircle">
                 <Icon.m width="50" height="50" class="mt-1" />
@@ -89,7 +91,7 @@ export default function Hero({ lang }) {
           </Reveal>
         </div>
         <Reveal delay={500}>
-          <div className="mt-20 flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.14em] text-neutral-400 dark:text-neutral-500 print:hidden">
+          <div className="mt-20 flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.14em] text-neutral-500 dark:text-neutral-400 print:hidden">
             <Icon.down width="12" height="12" className="animate-bounce" />
             {c.scroll[lang]}
           </div>

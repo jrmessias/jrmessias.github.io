@@ -1,21 +1,23 @@
 import { COPY } from '../data.js';
-import { CoffeeIcon } from "@animateicons/react/lucide";
+import { Icon } from './Icon.jsx';
 
 export default function Footer({ lang }) {
   return (
     <footer className="border-t border-black/5 dark:border-white/5 py-10">
-      <div className="max-w-6xl mx-auto px-6 md:px-10 flex flex-col md:flex-row items-start md:items-baseline justify-between gap-3 text-[12px] text-neutral-500 dark:text-neutral-500">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 flex flex-col md:flex-row items-start md:items-baseline justify-between gap-3 text-[12px] text-neutral-500 dark:text-neutral-400">
         <div>© {new Date().getFullYear()} Israel Messias Júnior · {COPY.footer.rights[lang]}</div>
-        <div>
-            <CoffeeIcon
-                size={16}
-                duration={1.3}
-                className="inline-block align-[-0.28em] mr-2 text-(--accent)"
+        <div className="group">
+            {/* Was @animateicons/react: 900 kB of bundle for this single icon.
+                Same wiggle in CSS, on the lucide icon already imported here. */}
+            <Icon.coffee
+                width={16}
+                aria-hidden="true"
+                className="inline-block align-[-0.28em] mr-2 text-(--accent-ink) origin-bottom transition-transform duration-300 group-hover:-rotate-12"
             />
             <span className="inline-block align-[-0.15em]">
           {COPY.footer.made[lang]}
         </span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" className="inline-block align-[-0.28em] ml-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" role="img" aria-label="Brasil" className="inline-block align-[-0.28em] ml-2">
                 <rect x="1" y="4" width="30" height="24" rx="4" ry="4" fill="#459a45"></rect>
                 <path d="M27,4H5c-2.209,0-4,1.791-4,4V24c0,2.209,1.791,4,4,4H27c2.209,0,4-1.791,4-4V8c0-2.209-1.791-4-4-4Zm3,20c0,1.654-1.346,3-3,3H5c-1.654,0-3-1.346-3-3V8c0-1.654,1.346-3,3-3H27c1.654,0,3,1.346,3,3V24Z" opacity=".15"></path>
                 <path d="M3.472,16l12.528,8,12.528-8-12.528-8L3.472,16Z" fill="#fedf00"></path>

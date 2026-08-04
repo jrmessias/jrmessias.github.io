@@ -1,4 +1,9 @@
 // Small utility helpers
+
+// CSS handles most of prefers-reduced-motion; JS-driven animations (reveal on
+// scroll, slot counters) have to opt out themselves.
+export const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+
 export function getLabel(value, lang = 'en') {
   // If it's already a string, return it
   if (typeof value === 'string') return value
@@ -13,4 +18,4 @@ export function getLabel(value, lang = 'en') {
   return ''
 }
 
-export default { getLabel }
+export default { getLabel, reduceMotion }

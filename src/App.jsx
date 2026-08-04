@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { COPY } from './data.js';
 import Header from './components/Header.jsx';
 import Hero from './sections/Hero.jsx';
 import About from './sections/About.jsx';
@@ -40,8 +41,12 @@ export default function App() {
 
   return (
     <div className="min-h-screen relative">
+      <a href="#content"
+         className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:h-10 focus:px-4 focus:inline-flex focus:items-center focus:rounded-full focus:bg-(--accent-ink) focus:text-(--accent-fg) focus:text-sm focus:font-medium no-print">
+        {COPY.a11y.skip[lang]}
+      </a>
       <Header lang={lang} setLang={setLang} dark={dark} setDark={setDark} />
-      <main>
+      <main id="content">
         <Hero lang={lang} />
         <About lang={lang} />
         <Skills lang={lang} />

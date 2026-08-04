@@ -14,7 +14,7 @@ export default function Courses({ lang }) {
                 {c.title[lang]}
               </h3>
               <div className="mt-2 text-[12px] text-neutral-500 dark:text-neutral-400">{c.institution}</div>
-              <div className="mt-1 flex items-center gap-2 text-[11px] text-neutral-400 dark:text-neutral-500">
+              <div className="mt-1 flex items-center gap-2 text-[11px] text-neutral-500 dark:text-neutral-400">
                 <span className="font-mono">{c.year}</span>
                 {c.expire && <span>· {c.expire}</span>}
                 {c.hours && <span>· {c.hours}h</span>}

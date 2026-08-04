@@ -12,11 +12,11 @@ export default function Experience({ lang }) {
             <span className="absolute left-[-7px] top-1.5 w-3 h-3 rounded-full bg-(--accent) ring-4 ring-white dark:ring-neutral-950" />
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
               <span className="text-[11px] font-mono uppercase tracking-[0.14em] text-neutral-500 dark:text-neutral-400">{e.period[lang]}</span>
-              <span className="text-[11px] text-neutral-400 dark:text-neutral-500">·</span>
+              <span aria-hidden="true" className="text-[11px] text-neutral-500 dark:text-neutral-400">·</span>
               <span className="text-[11px] text-neutral-500 dark:text-neutral-400">{e.place}</span>
             </div>
             <h3 className="text-xl md:text-2xl font-medium tracking-tight text-neutral-900 dark:text-neutral-50">
-              {e.title[lang]} <span className="text-neutral-400 dark:text-neutral-500 font-normal">· {e.company}</span>
+              {e.title[lang]} <span className="text-neutral-500 dark:text-neutral-400 font-normal">· {e.company}</span>
             </h3>
             <p className="mt-3 text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-400 max-w-3xl">{e.description[lang]}</p>
             {e.tags && (
