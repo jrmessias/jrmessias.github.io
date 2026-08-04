@@ -70,7 +70,7 @@ export default function Hero({ lang }) {
                     <div className="text-2xl font-variant-numeric md:text-3xl print:text-lg font-medium tracking-tight text-neutral-900 dark:text-neutral-50">
                       {reduceMotion ? s.value : <SlotCounter value={s.value} />}
                     </div>
-                    <div className="text-[11px] print:text-[9px] uppercase tracking-[0.12em] text-neutral-500 dark:text-neutral-400 mt-1 print:-mt-4">
+                    <div className="text-[11px] print:text-[9px] uppercase tracking-[0.12em] text-neutral-500 dark:text-neutral-400 mt-1">
                       {s.label[lang]}
                     </div>
                   </div>
