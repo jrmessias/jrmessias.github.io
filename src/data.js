@@ -203,7 +203,18 @@ export const CV_DATA = {
             url: "https://letter-avatar-generator.vercel.app/",
             image: "/assets/avatar-letter-generator.webp",
             tags: ["Avatar", {pt: "Gerador on-line", en: "On-line generator"}, "UI", "Vercel"],
-            year: "2025"
+            year: "2023"
+        },
+        {
+            name: "Gerador de Foto de Perfil com Estampa",
+            description: {
+                pt: "Gerador de foto de perfil com estampa, download em PNG, on-line.",
+                en: "Stamped profile picture generator, PNG download, on-line."
+            },
+            url: "https://stamped-profile-picture-generator.vercel.app/",
+            image: "/assets/stamped-profile-picture-generator.webp",
+            tags: [{pt: "Foto de perfil", en: "Profile Picture"}, {pt: "Gerador on-line", en: "On-line generator"}, "UI", "Vercel"],
+            year: "2026"
         },
     ],
     events: [
