@@ -7,7 +7,7 @@ import { Icon } from '../components/Icon.jsx';
 export default function Projects({ lang }) {
   return (
     <Section id="projects" eyebrow={COPY.section_index.projects[lang]} title={COPY.sections.projects[lang]}>
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {CV_DATA.projects.map((p, i) => (
           <Reveal key={p.url} delay={i * 80}>
             <a href={p.url} target="_blank" rel="noreferrer"

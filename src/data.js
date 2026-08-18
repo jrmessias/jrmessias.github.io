@@ -200,7 +200,7 @@ export const CV_DATA = {
                 pt: "Gerador de avatar com letras para uso em sites e aplicativos, download em PNG, SVG e área de transferência.",
                 en: "Avatar generator with text for use on websites and apps, download in PNG, SVG and clipboard formats."
             },
-            url: "https://letter-avatar-generator.vercel.app/",
+            url: "https://letter-avatar-generator.jrmessias.com.br/",
             image: "/assets/avatar-letter-generator.webp",
             tags: ["Avatar", {pt: "Gerador on-line", en: "On-line generator"}, "UI", "Vercel"],
             year: "2023"
@@ -211,7 +211,7 @@ export const CV_DATA = {
                 pt: "Gerador de foto de perfil com estampa, download em PNG, on-line.",
                 en: "Stamped profile picture generator, PNG download, on-line."
             },
-            url: "https://stamped-profile-picture-generator.vercel.app/",
+            url: "https://stamped-profile-picture-generator.jrmessias.com.br/",
             image: "/assets/stamped-profile-picture-generator.webp",
             tags: [{pt: "Foto de perfil", en: "Profile Picture"}, {pt: "Gerador on-line", en: "On-line generator"}, "UI", "Vercel"],
             year: "2026"
