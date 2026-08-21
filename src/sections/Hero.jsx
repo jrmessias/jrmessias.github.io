@@ -85,7 +85,7 @@ export default function Hero({ lang }) {
                   fetchPriority="high" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-3 -right-3 w-16 h-16 bg-(--accent) text-white place-items-center self-center shadow-lg box-squircle squircle">
-                <Icon.m width="50" height="50" class="mt-1" />
+                <Icon.m width="50" height="50" className="mt-1" />
               </div>
             </div>
           </Reveal>

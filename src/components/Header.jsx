@@ -91,7 +91,7 @@ export default function Header({ lang, setLang, dark, setDark }) {
       <div className="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2 group">
           <div className="-bottom-3 -right-3 w-7 h-7 bg-(--accent) text-white place-items-center self-center shadow-lg box-squircle squircle">
-            <Icon.m width="40" height="40" class="mt-1" />
+            <Icon.m width="40" height="40" className="mt-1" />
           </div>
           <span className="text-sm font-medium tracking-tight text-neutral-900 dark:text-neutral-100 hidden sm:inline">Israel Messias <span className="text-(--accent-ink)">Jr.</span></span>
         </a>

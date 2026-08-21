@@ -173,7 +173,10 @@ export const CV_DATA = {
     ],
     projects: [
         {
-            name: "Landing page e-book — Receitas Saudáveis",
+            name: {
+                pt: "Landing Page - Receitas Saudáveis",
+                en: "Landing Page - Healthy Recipes"
+            },
             description: {
                 pt: "Landing page para lançamento de ebook de receitas saudáveis com foco em conversão.",
                 en: "Landing page for a healthy-recipe ebook launch, conversion-focused."
@@ -184,7 +187,10 @@ export const CV_DATA = {
             year: "2025"
         },
         {
-            name: "Landing page e-book - Web Design Descomplicado",
+            name: {
+              pt: "Landing Page - Web Design Descomplicado",
+              en: "E-book Landing Page – Web Design Made Simple"
+            },
             description: {
                 pt: "Projeto educacional sobre fundamentos de web design e desenvolvimento front-end.",
                 en: "Educational project on web-design fundamentals and front-end development."
@@ -195,7 +201,10 @@ export const CV_DATA = {
             year: "2025"
         },
         {
-            name: "Gerador de Avatar com Letras",
+            name: {
+                pt: "Gerador de Avatar com Letras",
+                en: "Letter Avatar Generator"
+            },
             description: {
                 pt: "Gerador de avatar com letras para uso em sites e aplicativos, download em PNG, SVG e área de transferência.",
                 en: "Avatar generator with text for use on websites and apps, download in PNG, SVG and clipboard formats."
@@ -206,7 +215,10 @@ export const CV_DATA = {
             year: "2023"
         },
         {
-            name: "Gerador de Foto de Perfil com Estampa",
+            name: {
+                pt: "Gerador de Foto de Perfil com Estampa",
+                en: "Stamped Profile Picture Generator"
+            },
             description: {
                 pt: "Gerador de foto de perfil com estampa, download em PNG, on-line.",
                 en: "Stamped profile picture generator, PNG download, on-line."
@@ -214,6 +226,20 @@ export const CV_DATA = {
             url: "https://stamped-profile-picture-generator.jrmessias.com.br/",
             image: "/assets/stamped-profile-picture-generator.webp",
             tags: [{pt: "Foto de perfil", en: "Profile Picture"}, {pt: "Gerador on-line", en: "On-line generator"}, "UI", "Vercel"],
+            year: "2026"
+        },
+        {
+            name: {
+                pt: "promptmess - Geração de Imagens com IA",
+                en: "PromptMess - Image Generation with AI"
+            },
+            description: {
+                pt: "Repositório de prompts para gerar imagens com IA.",
+                en: "Repository of prompts for generating images with AI."
+            },
+            url: "https://promptmess.jrmessias.com.br/",
+            image: "/assets/promptmess.webp",
+            tags: [{pt: "Foto", en: "Picture"}, "IA", {pt: "Galeria", en: "Gallery"}, "Vercel", "Supabase"],
             year: "2026"
         },
     ],
