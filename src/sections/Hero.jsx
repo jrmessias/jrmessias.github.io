@@ -84,8 +84,8 @@ export default function Hero({ lang }) {
                 <img src="/assets/foto.webp" alt={d.identity.name} width="256" height="256"
                   fetchPriority="high" className="w-full h-full object-cover" />
               </div>
-              <div className="absolute -bottom-3 -right-3 w-16 h-16 bg-(--accent) text-white place-items-center self-center shadow-lg box-squircle squircle">
-                <Icon.m width="50" height="50" className="mt-1" />
+              <div className="absolute -bottom-3 -right-3 w-16 h-16 bg-(--accent) text-white grid place-items-center self-center shadow-lg box-squircle squircle">
+                <Icon.m width="64" height="64" />
               </div>
             </div>
           </Reveal>
