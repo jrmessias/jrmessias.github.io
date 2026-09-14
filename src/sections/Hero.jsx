@@ -63,14 +63,14 @@ export default function Hero({ lang }) {
                 </button>
               </div>
             </Reveal>
-            <Reveal delay={400}>
-              <div className="mt-16 grid grid-cols-3 gap-8 print:gap-4 max-w-md border-t border-black/10 dark:border-white/10 pt-6">
+            <Reveal delay={400} className="no-print">
+              <div className="mt-16 grid grid-cols-3 gap-8 max-w-md border-t border-black/10 dark:border-white/10 pt-6">
                 {d.stats.map((s) => (
                   <div key={s.value}>
-                    <div className="text-2xl font-variant-numeric md:text-3xl print:text-lg font-medium tracking-tight text-neutral-900 dark:text-neutral-50">
+                    <div className="text-2xl font-variant-numeric md:text-3xl font-medium tracking-tight text-neutral-900 dark:text-neutral-50">
                       {reduceMotion ? s.value : <SlotCounter value={s.value} />}
                     </div>
-                    <div className="text-[11px] print:text-[9px] uppercase tracking-[0.12em] text-neutral-500 dark:text-neutral-400 mt-1">
+                    <div className="text-[11px] uppercase tracking-[0.12em] text-neutral-500 dark:text-neutral-400 mt-1">
                       {s.label[lang]}
                     </div>
                   </div>

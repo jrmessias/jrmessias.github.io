@@ -564,8 +564,8 @@ export const COPY = {
         available: {pt: "Disponível para projetos", en: "Available for projects"},
         cta_contact: {pt: "Entrar em contato", en: "Get in touch"},
         // The button calls window.print(), so it must not promise a download.
-        cta_cv: {pt: "Salvar currículo em PDF", en: "Save CV as PDF"},
-        scroll: {pt: "Role para explorar", en: "Scroll to explore"},
+        cta_cv: {pt: "Baixar em PDF", en: "Download PDF"},
+        scroll: {pt: "Role para conhecer mais", en: "Scroll to learn more"},
     },
     a11y: {
         skip: {pt: "Pular para o conteúdo", en: "Skip to content"},
