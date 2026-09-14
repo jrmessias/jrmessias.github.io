@@ -245,25 +245,18 @@ export const CV_DATA = {
     ],
     events: [
         {
+            title: {pt: "Startup Summit 2026", en: "Startup Summit 2026 / SC"},
+            role: {pt: "Participante", en: "Participant"},
+            year: "2026",
+            place: "Florianópolis — SC",
+            url: "https://www.startupsummit.com.br/"
+        },
+        {
             title: {pt: "PHP Velho Oeste", en: "PHP Velho Oeste"},
             role: {pt: "Participante", en: "Participant"},
-            year: "2023-2026",
+            year: "2023 a 2026",
             place: "Chapecó — SC",
             url: "https://phpvelhoeste.com.br/"
-        },
-        {
-            title: {pt: "Hackathon Innova Saúde", en: "Innova Saúde Hackathon"},
-            role: {pt: "Mentor", en: "Mentor"},
-            year: "2025",
-            place: "São Miguel do Oeste — SC",
-            url: "#"
-        },
-        {
-            title: {pt: "Hackathon Innova Saúde", en: "Innova Saúde Hackathon"},
-            role: {pt: "Mentor", en: "Mentor"},
-            year: "2024",
-            place: "São Miguel do Oeste — SC",
-            url: "#"
         },
         {
             title: {pt: "Techstars Startup Weekend Agrotech", en: "Techstars Startup Weekend Agrotech"},
@@ -273,8 +266,22 @@ export const CV_DATA = {
             url: "#"
         },
         {
+            title: {pt: "Hackathon Innova Saúde", en: "Innova Saúde Hackathon"},
+            role: {pt: "Mentor", en: "Mentor"},
+            year: "2025",
+            place: "São Miguel do Oeste — SC",
+            url: "#"
+        },
+        {
             title: {pt: "Techstars Startup Weekend", en: "Techstars Startup Weekend"},
             role: {pt: "Organização", en: "Organizer"},
+            year: "2024",
+            place: "São Miguel do Oeste — SC",
+            url: "#"
+        },
+        {
+            title: {pt: "Hackathon Innova Saúde", en: "Innova Saúde Hackathon"},
+            role: {pt: "Mentor", en: "Mentor"},
             year: "2024",
             place: "São Miguel do Oeste — SC",
             url: "#"
@@ -294,11 +301,11 @@ export const CV_DATA = {
             url: "#"
         },
         {
-            title: {pt: "Startup Summit", en: "Startup Summit/SC"},
+            title: {pt: "Startup Summit 2022", en: "Startup Summit 2022 / SC"},
             role: {pt: "Participante", en: "Participant"},
             year: "2022",
             place: "Florianópolis — SC",
-            url: "#"
+            url: "https://www.startupsummit.com.br/"
         },
         {
             title: {pt: "Innova Startup Extreme", en: "Innova Startup Extreme"},

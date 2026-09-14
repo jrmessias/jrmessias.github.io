@@ -1,8 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 241" width="250" height="241">
-    <path fill="#fffefe" d="m42.72 28.07-.11 53.09 15.44 12.82.06-29.82 137.6 122 .09-80.96-15.05 13.73-.99 29.89-137-120.7z"></path>
-    <path fill="#fffefe" d="m195.4 28.18-63.31 56.13 12.76 10.8 35.44-31.63-.01 30.49 15.26-14.35zM42.99 105.2v67.91l112.4-.03-20.24-15.05-76.95-.71-.06-39.76-15.2-12.36z"></path>
-    <style>
-        @media (prefers-color-scheme: light) { :root { filter: contrast(1) brightness(0.1); } }
-        @media (prefers-color-scheme: dark) { :root { filter: none; } }
-    </style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <path fill="#fffefe" transform="translate(24.0 24.773763446492296) scale(0.9951877434772645)" d="M 0 0 L 0 52.947266 L 15.496094 65.951172 L 15.496094 36.023438 L 152.73438 151.17969 L 152.73438 77.019531 L 137.1875 90.066406 L 137.1875 115.11328 L 0 0 z M 152.73438 0 L 101.11328 43.316406 L 101.11328 65.9375 L 137.23828 36.023438 L 137.23828 65.951172 L 152.73438 52.947266 L 152.73438 0 z M 0.32421875 77.019531 L 0.32421875 144.92969 L 109.61328 144.92383 L 91.53125 129.75195 L 15.496094 129.75195 L 15.496094 89.398438 L 0.74414062 77.019531 L 0.32421875 77.019531 z"/>
+  <style>
+    @media (prefers-color-scheme: light) { :root { filter: contrast(1) brightness(0.1); } }
+    @media (prefers-color-scheme: dark) { :root { filter: none; } }
+  </style>
 </svg>
