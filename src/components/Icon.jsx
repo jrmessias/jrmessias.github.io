@@ -1,4 +1,4 @@
-import {Sun, Moon, ArrowUpRight, ArrowDown, Download, Mail, Coffee, Menu, X, Code} from 'lucide-react';
+import {Sun, Moon, ArrowUpRight, ArrowDown, Download, Mail, Coffee, Menu, X, Code, Phone, Share2, Copy, Check, Globe, UserPlus, QrCode} from 'lucide-react';
 
 const lucide = (IconComponent) => (p) => {
   const { width, height, ...rest } = p;
@@ -48,6 +48,24 @@ const XIcon = (p) => (
   </svg>
 );
 
+const Telegram = (p) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...p}>
+    <path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6.1 13 1.2 11.5c-1-.3-1.1-1 .2-1.5l19.1-7.4c.9-.3 1.6.2 1.4 1.7z" />
+  </svg>
+);
+
+const Facebook = (p) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...p}>
+    <path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z" />
+  </svg>
+);
+
+const Linkedin = (p) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...p}>
+    <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76V21h-4v-5.6c0-1.34-.03-3.07-1.9-3.07-1.9 0-2.2 1.46-2.2 2.97V21h-4V9z" />
+  </svg>
+);
+
 const Dot = (p) => (
   <svg viewBox="0 0 8 8" {...p}><circle cx="4" cy="4" r="3" fill="currentColor" /></svg>
 );
@@ -62,6 +80,15 @@ const M = (p) => (
 
 export const Icon = {
     arrow: lucide(ArrowUpRight),
+    check: lucide(Check),
+    copy: lucide(Copy),
+    facebook: Facebook,
+    globe: lucide(Globe),
+    phone: lucide(Phone),
+    qr: lucide(QrCode),
+    saveContact: lucide(UserPlus),
+    share: lucide(Share2),
+    telegram: Telegram,
     close: lucide(X),
     code: lucide(Code),
     coffee: lucide(Coffee),
@@ -73,6 +100,7 @@ export const Icon = {
     github: Github,
     instagram: Instagram,
     lattes: Lattes,
+    linkedin: Linkedin,
     m: M,
     menu: lucide(Menu),
     moon: lucide(Moon),

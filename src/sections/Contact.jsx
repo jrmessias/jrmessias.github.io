@@ -91,12 +91,15 @@ export default function Contact({ lang }) {
 
   const items = [
     { key: 'whatsapp', label: 'WhatsApp', value: '+55 49 98819-8409', icon: Icon.whatsapp, url: CV_DATA.contact.whatsapp },
-    { key: 'github', label: 'GitHub', value: 'github.com/jrmessias', icon: Icon.github, url: CV_DATA.contact.github },
-    { key: 'figma', label: 'Figma', value: 'figma.com/@jrmessias', icon: Icon.figma, url: CV_DATA.contact.figma },
-    { key: 'lattes', label: 'Lattes', value: 'lattes.cnpq.br', icon: Icon.lattes, url: CV_DATA.contact.lattes },
-    { key: 'instagram', label: 'Instagram', value: '@i.am.jrmessias', icon: Icon.instagram, url: CV_DATA.contact.instagram },
     { key: 'email', label: 'Email', value: 'jrmessias@gmail.com', icon: Icon.email, action: () => setModalOpen(true) },
+    { key: 'github', label: 'GitHub', value: 'github.com/jrmessias', icon: Icon.github, url: CV_DATA.contact.github },
+    { key: 'instagram', label: 'Instagram', value: '@i.am.jrmessias', icon: Icon.instagram, url: CV_DATA.contact.instagram },
+    { key: 'linkedin', label: 'LinkedIn', value: 'linkedin.com/in/jrmessias', icon: Icon.linkedin, url: CV_DATA.contact.linkedin },
+    { key: 'card', label: COPY.card.title[lang], icon: Icon.qr, url: '/cartao' },
+    // { key: 'figma', label: 'Figma', value: 'figma.com/@jrmessias', icon: Icon.figma, url: CV_DATA.contact.figma },
+    // { key: 'lattes', label: 'Lattes', value: 'lattes.cnpq.br', icon: Icon.lattes, url: CV_DATA.contact.lattes },
   ];
+
 
   return (
     <>
@@ -109,7 +112,8 @@ export default function Contact({ lang }) {
             // Links and the modal trigger differ only in the tag and its props.
             const Tag = it.url ? 'a' : 'button';
             const tagProps = it.url
-              ? { href: it.url, target: '_blank', rel: 'noreferrer' }
+              // The card page is on this same site, so it opens in the same tab.
+              ? { href: it.url, ...(it.url.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {}) }
               : { type: 'button', onClick: it.action, 'aria-haspopup': 'dialog' };
             return (
               <Reveal key={it.key} delay={i * 70}>
@@ -121,7 +125,8 @@ export default function Contact({ lang }) {
                     </span>
                     <span className="min-w-0">
                       <span className="contact-label block text-[11px] font-mono uppercase tracking-[0.14em] text-neutral-500 dark:text-neutral-400">{it.label}</span>
-                      <span className="contact-value block text-sm font-medium text-neutral-900 dark:text-neutral-100 truncate">{it.value}</span>
+                      {/* Items with no value (the card page) show the label alone. */}
+                      {it.value && <span className="contact-value block text-sm font-medium text-neutral-900 dark:text-neutral-100 truncate">{it.value}</span>}
                     </span>
                   </span>
                   <span aria-hidden="true" className="shrink-0 w-9 h-9 rounded-full border border-black/10 dark:border-white/10 grid place-items-center text-neutral-500 group-hover:bg-(--accent-ink) group-hover:border-(--accent-ink) group-hover:text-(--accent-fg) transition-all">

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Cartão de contato | Israel Messias Júnior</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="jrmessias" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest"/>
+    <link rel="canonical" href="https://www.jrmessias.com.br/cartao"/>
+    <meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)"/>
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"/>
+    <meta name="description"
+          content="Cartão de contato de Israel Messias Júnior: WhatsApp, telefone, e-mail, GitHub e redes. Salve na agenda ou compartilhe.">
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="Israel Messias Júnior">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Cartão de contato | Israel Messias Júnior">
+    <meta property="og:description"
+          content="Todos os contatos em um só lugar: WhatsApp, telefone, e-mail e redes. Salve na agenda ou compartilhe.">
+    <meta property="og:url" content="https://www.jrmessias.com.br/cartao">
+    <meta property="og:image" content="https://www.jrmessias.com.br/assets/foto.png">
+    <meta property="og:image:width" content="384">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="Foto de Israel Messias Júnior">
+    <meta name="twitter:card" content="summary">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+          rel="stylesheet"/>
+    <script>
+        // Applies the stored theme before first paint. Without this, React only
+        // adds .dark in an effect and dark-mode users get a white flash.
+        try {
+            var saved = localStorage.getItem('cv-dark');
+            var dark = saved != null ? saved === '1' : matchMedia('(prefers-color-scheme: dark)').matches;
+            if (dark) document.documentElement.classList.add('dark');
+            var lang = localStorage.getItem('cv-lang');
+            if (lang) document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+        } catch (e) {
+        }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SMX0451JVM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-SMX0451JVM');
+    </script>
+</head>
+<body class="antialiased">
+<div class="bg-gradient-decor"></div>
+<div id="root"></div>
+<script type="module" src="/src/cartao.jsx"></script>
+</body>
+</html>
