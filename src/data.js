@@ -540,12 +540,19 @@ export const CV_DATA = {
         },
     ],
     contact: {
+        phone: "+55 49 98819-8409",
+        phone_url: "tel:+5549988198409",
+        site: "www.jrmessias.com.br",
+        site_url: "https://www.jrmessias.com.br",
         whatsapp: "https://wa.me/+55049988198409?text=Contato%20via%20site",
         github: "https://www.github.com/jrmessias",
         instagram: "https://www.instagram.com/i.am.jrmessias",
         figma: "https://www.figma.com/@jrmessias",
         lattes: "http://lattes.cnpq.br/2703556361470739",
+        linkedin: "https://www.linkedin.com/in/jrmessias",
         email: "mailto:jrmessias@gmail.com",
+        // Preencha a chave PIX para o item aparecer no cartão (/cartao).
+        pix: {key: "+5549988198409", name: "Israel Messias Junior", city: "Sao Miguel do Oeste"},
     },
 };
 
@@ -616,6 +623,41 @@ export const COPY = {
                 en: "Message sent. I'll get back to you soon!",
             },
             error: {pt: "Erro ao enviar. Tente novamente.", en: "Failed to send. Please try again."},
+        },
+    },
+    card: {
+        title: {pt: "Cartão de contato", en: "Contact card"},
+        meta_description: {
+            pt: "Cartão de contato de Israel Messias Júnior: WhatsApp, telefone, e-mail e redes.",
+            en: "Contact card for Israel Messias Júnior: WhatsApp, phone, email and social links.",
+        },
+        lead: {
+            pt: "Todos os meus contatos em um só lugar. Prefira o WhatsApp para respostas mais rápidas.",
+            en: "All my contacts in one place. WhatsApp is the fastest way to reach me.",
+        },
+        save: {pt: "Salvar na agenda", en: "Save to contacts"},
+        share: {pt: "Compartilhar", en: "Share"},
+        share_title: {pt: "Compartilhar cartão", en: "Share card"},
+        copy: {pt: "Copiar link", en: "Copy link"},
+        copied: {pt: "Link copiado!", en: "Link copied!"},
+        share_text: {
+            pt: "Contato de Israel Messias Júnior",
+            en: "Israel Messias Júnior's contact card",
+        },
+        pix: {
+            label: {pt: "PIX", en: "PIX"},
+            title: {pt: "Chave PIX", en: "PIX key"},
+            hint: {
+                pt: "Escaneie o QR Code no app do banco ou copie o código.",
+                en: "Scan the QR code in your banking app or copy the code.",
+            },
+            copy: {pt: "Copiar chave PIX", en: "Copy PIX key"},
+            copied: {pt: "Chave copiada!", en: "Key copied!"},
+        },
+        labels: {
+            phone: {pt: "Telefone", en: "Phone"},
+            site: {pt: "Site & Portfólio", en: "Website & Portfolio"},
+            email: {pt: "E-mail", en: "Email"},
         },
     },
     footer: {
