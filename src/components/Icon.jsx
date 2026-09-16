@@ -1,4 +1,4 @@
-import {Sun, Moon, ArrowUpRight, ArrowDown, Download, Mail, Coffee, Menu, X, Code, Phone, Share2, Copy, Check, Globe, UserPlus, QrCode} from 'lucide-react';
+import {Sun, Moon, ArrowUpRight, ArrowDown, Download, Mail, Coffee, Menu, X, Code, Phone, Share2, Copy, Check, Globe, UserPlus, QrCode, Shapes} from 'lucide-react';
 
 const lucide = (IconComponent) => (p) => {
   const { width, height, ...rest } = p;
@@ -100,6 +100,7 @@ export const Icon = {
     github: Github,
     instagram: Instagram,
     lattes: Lattes,
+    shapes: lucide(Shapes),
     linkedin: Linkedin,
     m: M,
     menu: lucide(Menu),
