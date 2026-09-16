@@ -129,6 +129,7 @@ export default function Cartao() {
     { key: 'github', label: 'GitHub', icon: Icon.github, url: d.contact.github },
     { key: 'instagram', label: 'Instagram', icon: Icon.instagram, url: d.contact.instagram },
     { key: 'linkedin', label: 'LinkedIn', icon: Icon.linkedin, url: d.contact.linkedin },
+    { key: 'colekta', label: 'Colekta', icon: Icon.shapes, url: d.contact.colekta },
     // { key: 'figma', label: 'Figma', icon: Icon.figma, url: d.contact.figma },
     // The PIX item only shows up once a key is filled in CV_DATA.contact.pix.
     ...(d.contact.pix.key

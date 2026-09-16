@@ -551,6 +551,7 @@ export const CV_DATA = {
         lattes: "http://lattes.cnpq.br/2703556361470739",
         linkedin: "https://www.linkedin.com/in/jrmessias",
         email: "mailto:jrmessias@gmail.com",
+        colekta: "https://colekta.jrmessias.com.br/u/jrmessias",
         // Preencha a chave PIX para o item aparecer no cartão (/cartao).
         pix: {key: "+5549988198409", name: "Israel Messias Junior", city: "Sao Miguel do Oeste"},
     },
