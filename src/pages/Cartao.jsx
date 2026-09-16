@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { CV_DATA, COPY } from '../data.js';
 import { useLangTheme } from '../hooks.js';
 import Footer from '../components/Footer.jsx';
-import Reveal from '../components/Reveal.jsx';
 import { Icon } from '../components/Icon.jsx';
 import { LangToggle, ThemeToggle } from '../components/Toggles.jsx';
 import { copyText, downloadVcard } from '../utils.js';
@@ -166,7 +165,6 @@ export default function Cartao() {
           {/*  </div>*/}
           {/*</Reveal>*/}
 
-          <Reveal delay={80}>
             <section className="relative rounded-3xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/2 backdrop-blur-sm px-6 pt-20 pb-8 text-center">
               <button type="button" onClick={share} aria-haspopup="dialog"
                 className="absolute top-4 left-4 w-9 h-9 rounded-full grid place-items-center border border-black/10 dark:border-white/10 text-neutral-600 dark:text-neutral-300 hover:bg-(--accent-ink) hover:border-(--accent-ink) hover:text-(--accent-fg) transition-colors cursor-pointer"
@@ -197,14 +195,11 @@ export default function Cartao() {
                 {c.save[lang]}
               </button>
             </section>
-          </Reveal>
 
-          <Reveal delay={140}>
             <p className="mt-8 text-center text-sm text-neutral-600 dark:text-neutral-400 text-pretty">{c.lead[lang]}</p>
-          </Reveal>
 
           <ul className="mt-6 space-y-3">
-            {items.map((it, i) => {
+            {items.map((it) => {
               // Links and the modal triggers differ only in the tag and its props.
               const Tag = it.url ? 'a' : 'button';
               const tagProps = it.url
@@ -212,7 +207,7 @@ export default function Cartao() {
                     rel: it.url.startsWith('http') ? 'noreferrer' : undefined }
                 : { type: 'button', onClick: it.action, 'aria-haspopup': 'dialog' };
               return (
-              <Reveal key={it.key} delay={180 + i * 60} as="li">
+              <li key={it.key}>
                 <Tag {...tagProps}
                   className="contact-card group relative w-full flex items-center justify-center gap-4 p-4 rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-white/2 hover:border-(--accent)/50 hover:-translate-y-0.5 transition-all cursor-pointer">
                   <span className="absolute left-4 w-10 h-10 rounded-full grid place-items-center bg-(--accent)/10 text-(--accent-ink) print-icon">
@@ -223,18 +218,16 @@ export default function Cartao() {
                     <Icon.arrow width="14" height="14" />
                   </span>
                 </Tag>
-              </Reveal>
+              </li>
               );
             })}
           </ul>
 
-          <Reveal delay={260}>
             <button type="button" onClick={share}
               className="mt-8 w-full inline-flex items-center justify-center gap-2 h-11 rounded-full border border-black/10 dark:border-white/10 text-sm font-medium text-neutral-800 dark:text-neutral-200 hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer">
               <Icon.share width="15" height="15" />
               {c.share[lang]}
             </button>
-          </Reveal>
         </div>
       </main>
       <Footer lang={lang} />
