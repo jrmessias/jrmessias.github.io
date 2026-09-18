@@ -230,6 +230,20 @@ export const CV_DATA = {
         },
         {
             name: {
+                pt: "Gerador de QR Code",
+                en: "QR Code Generator"
+            },
+            description: {
+                pt: "Gerador gratuito de QR Code para uso em sites e aplicativos.",
+                en: "Free QR Code generator for use on websites and apps."
+            },
+            url: "https://qrcode-generator.jrmessias.com.br/",
+            image: "/assets/qrcode-generator.webp",
+            tags: ["QR Code", {pt: "Gerador on-line", en: "On-line generator"}, "UI", "Vercel", { pt: "Ferramenta gratuita", en: "Free tool"}],
+            year: "2026"
+        },
+        {
+            name: {
                 pt: "promptmess - Geração de Imagens com IA",
                 en: "PromptMess - Image Generation with AI"
             },
@@ -242,6 +256,20 @@ export const CV_DATA = {
             tags: [{pt: "Foto", en: "Picture"}, "IA", {pt: "Galeria", en: "Gallery"}, "Vercel", "Supabase"],
             year: "2026"
         },
+        {
+            name: {
+                pt: "Colekta - Gerenciador de coleções",
+                en: "Colekta - Collection Manager"
+            },
+            description: {
+                pt: "Gerenciador de coleções para organizar e compartilhar com outros usuários.",
+                en: "Collection manager for organizing and sharing with other users."
+            },
+            url: "https://colekta.jrmessias.com.br/",
+            image: "/assets/colekta.webp",
+            tags: [{pt: "Coleção", en: "Collection"}, "Gerenciador", {pt: "Compartilhamento", en: "Sharing"}, "Vercel", "Supabase", "Sender"],
+            year: "2026"
+        }
     ],
     events: [
         {
