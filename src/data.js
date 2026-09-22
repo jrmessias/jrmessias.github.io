@@ -673,6 +673,14 @@ export const COPY = {
             pt: "Contato de Israel Messias Júnior",
             en: "Israel Messias Júnior's contact card",
         },
+        qr: {
+            title: {pt: "QR Code do cartão", en: "Card QR code"},
+            hint: {
+                pt: "Aponte a câmera para abrir este cartão.",
+                en: "Point your camera to open this card.",
+            },
+            open: {pt: "Ver QR Code do cartão", en: "Show card QR code"},
+        },
         pix: {
             label: {pt: "PIX", en: "PIX"},
             title: {pt: "Chave PIX", en: "PIX key"},
