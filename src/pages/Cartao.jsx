@@ -115,11 +115,50 @@ function PixModal({ isOpen, onClose, lang }) {
   );
 }
 
+function QrModal({ isOpen, onClose, lang, dark }) {
+  const c = COPY.card.qr;
+  const dialogRef = useRef(null);
+
+  useEffect(() => {
+    const el = dialogRef.current;
+    if (!el) return;
+    if (isOpen && !el.open) el.showModal();
+    if (!isOpen && el.open) el.close();
+  }, [isOpen]);
+
+  const onBackdropClick = (e) => { if (e.target === dialogRef.current) onClose(); };
+
+  return (
+    <dialog ref={dialogRef} onClose={onClose} onClick={onBackdropClick} aria-labelledby="qr-modal-title"
+      className="m-auto w-[calc(100%-2rem)] max-w-md bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 rounded-2xl p-6 shadow-2xl">
+      <button onClick={onClose} aria-label={COPY.a11y.close[lang]}
+        className="absolute top-4 right-4 w-8 h-8 rounded-full grid place-items-center text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+        <Icon.close width="18" height="18" />
+      </button>
+      <h2 id="qr-modal-title" className="text-xl font-medium mb-2">{c.title[lang]}</h2>
+      <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-5">{c.hint[lang]}</p>
+      <img src={`/assets/qrcode-jrmessias-cartao-${dark ? 'dark' : 'light'}.svg`} alt={c.title[lang]}
+        width="220" height="220" className="mx-auto w-56 h-56" />
+      <p className="mt-4 text-center text-[11px] font-mono text-neutral-500 dark:text-neutral-400 break-all">{PAGE_URL}</p>
+    </dialog>
+  );
+}
+
 export default function Cartao() {
   const { lang, setLang, dark, setDark } = useLangTheme();
   const [shareOpen, setShareOpen] = useState(false);
   const [pixOpen, setPixOpen] = useState(false);
+  const [qrOpen, setQrOpen] = useState(false);
   const c = COPY.card;
+
+  // Long press on the photo opens the card QR code; a plain tap does nothing.
+  const pressTimer = useRef(null);
+  const longPressed = useRef(false);
+  const startPress = () => {
+    longPressed.current = false;
+    pressTimer.current = setTimeout(() => { longPressed.current = true; setQrOpen(true); }, 500);
+  };
+  const endPress = () => clearTimeout(pressTimer.current);
 
   const items = [
     { key: 'site', label: c.labels.site[lang], icon: Icon.globe, url: d.contact.site_url },
@@ -174,10 +213,14 @@ export default function Cartao() {
               </button>
 
               <div className="absolute -top-14 left-1/2 -translate-x-1/2">
-                <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-(--bg) shadow-lg">
+                <button type="button" aria-haspopup="dialog" aria-label={COPY.card.qr.open[lang]}
+                  onPointerDown={startPress} onPointerUp={endPress} onPointerLeave={endPress} onPointerCancel={endPress}
+                  onContextMenu={(e) => e.preventDefault()}
+                  onClick={() => { if (!longPressed.current) setQrOpen(true); }}
+                  className="w-28 h-28 rounded-full overflow-hidden border-4 border-(--bg) shadow-lg block select-none touch-none cursor-pointer">
                   <img src="/assets/foto.webp" alt={d.identity.name} width="112" height="112"
-                    fetchPriority="high" className="w-full h-full object-cover" />
-                </div>
+                    fetchPriority="high" draggable="false" className="w-full h-full object-cover pointer-events-none" />
+                </button>
               </div>
 
               <h1 className="text-3xl md:text-4xl font-medium tracking-tight text-neutral-900 dark:text-neutral-50">
@@ -234,6 +277,7 @@ export default function Cartao() {
       <Footer lang={lang} />
       <ShareModal isOpen={shareOpen} onClose={() => setShareOpen(false)} lang={lang} />
       <PixModal isOpen={pixOpen} onClose={() => setPixOpen(false)} lang={lang} />
+      <QrModal isOpen={qrOpen} onClose={() => setQrOpen(false)} lang={lang} dark={dark} />
     </div>
   );
 }
