@@ -269,6 +269,20 @@ export const CV_DATA = {
             image: "/assets/colekta.webp",
             tags: [{pt: "Coleção", en: "Collection"}, "Gerenciador", {pt: "Compartilhamento", en: "Sharing"}, "Vercel", "Supabase", "Sender"],
             year: "2026"
+        },
+        {
+            name: {
+                pt: "Comandos / do ChatGPT",
+                en: "ChatGPT Commands"
+            },
+            description: {
+                pt: "Lista de comandos para usar no ChatGPT.",
+                en: "List of commands to use in ChatGPT."
+            },
+            url: "https://slash-gpt.jrmessias.com.br/",
+            image: "/assets/slash-gpt.webp",
+            tags: [{pt: "Comandos para ChatGPT", en: "ChatGPT Commands"}, "IA", {pt: "Lista de comandos", en: "Command list"}, "ChatGPT"],
+            year: "2026"
         }
     ],
     events: [
@@ -672,6 +686,14 @@ export const COPY = {
         share_text: {
             pt: "Contato de Israel Messias Júnior",
             en: "Israel Messias Júnior's contact card",
+        },
+        qr: {
+            title: {pt: "QR Code do cartão", en: "Card QR code"},
+            hint: {
+                pt: "Aponte a câmera para abrir este cartão.",
+                en: "Point your camera to open this card.",
+            },
+            open: {pt: "Ver QR Code do cartão", en: "Show card QR code"},
         },
         pix: {
             label: {pt: "PIX", en: "PIX"},
