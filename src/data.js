@@ -269,6 +269,20 @@ export const CV_DATA = {
             image: "/assets/colekta.webp",
             tags: [{pt: "Coleção", en: "Collection"}, "Gerenciador", {pt: "Compartilhamento", en: "Sharing"}, "Vercel", "Supabase", "Sender"],
             year: "2026"
+        },
+        {
+            name: {
+                pt: "Comandos / do ChatGPT",
+                en: "ChatGPT Commands"
+            },
+            description: {
+                pt: "Lista de comandos para usar no ChatGPT.",
+                en: "List of commands to use in ChatGPT."
+            },
+            url: "https://slash-gpt.jrmessias.com.br/",
+            image: "/assets/slash-gpt.webp",
+            tags: [{pt: "Comandos para ChatGPT", en: "ChatGPT Commands"}, "IA", {pt: "Lista de comandos", en: "Command list"}, "ChatGPT"],
+            year: "2026"
         }
     ],
     events: [
