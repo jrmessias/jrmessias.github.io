@@ -272,16 +272,16 @@ export const CV_DATA = {
         },
         {
             name: {
-                pt: "Comandos / do ChatGPT",
-                en: "ChatGPT Commands"
+                pt: "Almanaque F1",
+                en: "F1 Almanac"
             },
             description: {
-                pt: "Lista de comandos para usar no ChatGPT.",
-                en: "List of commands to use in ChatGPT."
+                pt: "Dados sobre a história, pilotos e equipes da Fórmula 1.",
+                en: "Data about the history, drivers and teams of Formula 1."
             },
-            url: "https://slash-gpt.jrmessias.com.br/",
-            image: "/assets/slash-gpt.webp",
-            tags: [{pt: "Comandos para ChatGPT", en: "ChatGPT Commands"}, "IA", {pt: "Lista de comandos", en: "Command list"}, "ChatGPT"],
+            url: "https://almanaque-f1.vercel.app/",
+            image: "/assets/f1-almanaque.webp",
+            tags: ["F1", "IA", {pt: "Dados", en: "Data"}, "Vercel"],
             year: "2026"
         }
     ],
